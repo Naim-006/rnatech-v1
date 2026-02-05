@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RNATech | System Maintenance</title>
+    <title>Coming Soon | RNATech</title>
+    <meta name="description" content="RNATech website is under construction. We will be active in 3 days.">
+    
+    <!-- Modern Sans-Serif Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* --- RESET & FONTS --- */
+        /* --- CSS Variables for Consistency --- */
         :root {
-            --bg-color: #0b0c10;
-            --grid-line: #1f2833;
-            --accent-cyan: #66fcf1;
-            --accent-dark: #45a29e;
-            --text-main: #c5c6c7;
-            --warning: #ffbd2e; /* Industrial Orange/Yellow */
+            --bg-color: #f4f6f8; /* Very light cool grey */
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-secondary: #6b7280;
+            --accent-color: #2563eb; /* Professional Blue */
+            --border-color: #e5e7eb;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
         }
 
+        /* --- Reset & Base --- */
         * {
             margin: 0;
             padding: 0;
@@ -22,404 +31,247 @@
         }
 
         body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Courier New', Courier, monospace; /* Technical feel */
             height: 100vh;
-            width: 100vw;
-            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            position: relative;
+            justify-content: center;
+            padding: 20px;
+            /* Subtle background pattern */
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
-        /* --- TECHNICAL GRID BACKGROUND --- */
-        .bg-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: 0;
-            opacity: 0.5;
-        }
-
-        /* Vignette overlay */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--bg-color) 90%);
-            z-index: 1;
-        }
-
-        /* --- MAIN CONTAINER --- */
+        /* --- Main Container --- */
         .container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 900px;
-            padding: 2rem;
-            border: 1px solid var(--accent-dark);
-            background: rgba(11, 12, 16, 0.85);
-            box-shadow: 0 0 30px rgba(69, 162, 158, 0.1);
-            backdrop-filter: blur(5px);
-            clip-path: polygon(
-                20px 0, 100% 0, 
-                100% calc(100% - 20px), calc(100% - 20px) 100%, 
-                0 100%, 0 20px
-            ); /* Cut corners */
-        }
-
-        /* Decorative corner markers */
-        .corner {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-cyan);
-            box-shadow: 0 0 10px var(--accent-cyan);
-        }
-        .tl { top: 0; left: 0; }
-        .tr { top: 0; right: 0; }
-        .bl { bottom: 0; left: 0; }
-        .br { bottom: 0; right: 0; }
-
-        /* --- ANIMATED CORE (CSS ONLY) --- */
-        .core-wrapper {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px auto;
-        }
-
-        .core {
+            background-color: var(--card-bg);
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px dashed var(--accent-dark);
-            animation: rotate 10s linear infinite;
-            position: absolute;
-            top: 0;
-            left: 0;
+            max-width: 550px;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .core-inner {
-            position: absolute;
-            top: 25%;
-            left: 25%;
-            width: 50%;
-            height: 50%;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--accent-cyan);
-            animation: pulse 2s infinite ease-in-out;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .ring {
-            position: absolute;
-            border: 1px solid var(--accent-dark);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.5;
+        /* --- Logo --- */
+        .logo-container {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
-        .ring-1 { width: 140px; height: 140px; border-top: 2px solid var(--warning); animation: rotate 6s linear infinite reverse; }
-        .ring-2 { width: 180px; height: 180px; border-bottom: 2px solid var(--accent-cyan); animation: rotate 15s linear infinite; }
 
-        /* --- TYPOGRAPHY --- */
+        .logo-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Typography --- */
         h1 {
-            color: #fff;
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
         }
 
-        h2 {
-            color: var(--accent-cyan);
+        p.subtitle {
+            color: var(--text-secondary);
             font-size: 1rem;
-            letter-spacing: 2px;
+            line-height: 1.6;
             margin-bottom: 30px;
-            text-transform: uppercase;
         }
 
-        .status-box {
-            border-left: 4px solid var(--warning);
-            background: rgba(255, 189, 46, 0.1);
-            padding: 15px;
+        /* --- Progress Bar --- */
+        .progress-section {
             margin-bottom: 30px;
             text-align: left;
-            font-size: 0.9rem;
-            line-height: 1.5;
         }
 
-        .blink {
-            animation: blinker 1.5s linear infinite;
-            color: var(--warning);
-            font-weight: bold;
-        }
-
-        /* --- PROGRESS BAR --- */
-        .progress-wrapper {
-            margin-bottom: 30px;
-        }
         .progress-label {
             display: flex;
             justify-content: space-between;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
         }
+
         .progress-track {
             width: 100%;
             height: 8px;
-            background: #1f2833;
-            position: relative;
-        }
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-dark), var(--accent-cyan));
-            width: 0%;
-            animation: loadBar 4s ease-out forwards;
-            position: relative;
-        }
-        /* Scanline effect on progress bar */
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: translateX(-100%);
-            animation: scan 2s infinite;
+            background-color: #f3f4f6;
+            border-radius: 4px;
+            overflow: hidden;
         }
 
-        /* --- COUNTDOWN --- */
+        .progress-fill {
+            height: 100%;
+            background-color: var(--text-main); /* Black to match logo */
+            width: 85%; /* Simulating near completion */
+            border-radius: 4px;
+            position: relative;
+            animation: growWidth 1.5s ease-out;
+        }
+
+        @keyframes growWidth {
+            from { width: 0; }
+            to { width: 85%; }
+        }
+
+        /* --- Countdown Timer (Minimalist) --- */
         .countdown {
             display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 20px;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
         }
-        .cd-unit {
+
+        .time-unit {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .cd-num {
-            font-size: 2rem;
-            font-weight: bold;
+
+        .time-val {
+            font-size: 1.75rem;
+            font-weight: 600;
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        .time-lbl {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* --- Contact Button --- */
+        .btn-contact {
+            display: inline-block;
+            background-color: var(--text-main);
             color: #fff;
-            font-family: Arial, sans-serif; /* Contrast font */
-        }
-        .cd-txt {
-            font-size: 0.7rem;
-            color: var(--accent-dark);
-            text-transform: uppercase;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
-        /* --- BUTTON --- */
-        .btn-notify {
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            background-color: #333;
+        }
+
+        footer {
             margin-top: 30px;
-            background: transparent;
-            border: 1px solid var(--accent-cyan);
-            color: var(--accent-cyan);
-            padding: 10px 30px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
+            font-size: 0.8rem;
+            color: #9ca3af;
         }
 
-        .btn-notify::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-cyan);
-            transition: 0.3s;
-            z-index: -1;
-        }
-
-        .btn-notify:hover {
-            color: #000;
-        }
-        .btn-notify:hover::before {
-            left: 0;
-        }
-
-        /* --- KEYFRAMES --- */
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
-        @keyframes blinker { 50% { opacity: 0; } }
-        @keyframes loadBar { 0% { width: 0; } 100% { width: 78%; } } /* Stuck at 78% to imply work in progress */
-        @keyframes scan { 100% { transform: translateX(100%); } }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .container { width: 95%; margin: 10px; }
-            .countdown { gap: 10px; }
-            .cd-num { font-size: 1.5rem; }
+        /* --- Responsive --- */
+        @media (max-width: 480px) {
+            .container { padding: 40px 20px; }
+            h1 { font-size: 1.75rem; }
+            .logo-img { max-width: 220px; }
+            .countdown { gap: 15px; }
+            .time-val { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-grid"></div>
-    <div class="overlay"></div>
-
-    <main class="container">
-        <!-- Corner Markers -->
-        <div class="corner tl"></div>
-        <div class="corner tr"></div>
-        <div class="corner bl"></div>
-        <div class="corner br"></div>
-
-        <!-- Central Animation: The Core -->
-        <div class="core-wrapper">
-            <div class="ring ring-1"></div>
-            <div class="ring ring-2"></div>
-            <div class="core">
-                <div class="core-inner"></div>
-            </div>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <!-- The specific image URL requested -->
+            <img src="https://z-cdn-media.chatglm.cn/files/031afbb9-d337-4947-8e84-dfdfde0b4420.png?auth_key=1870309504-c8506ac806014b80883b5c52a8509844-0-de13fe479def5fdd9f5eb6ca37616e3f" alt="RNATech Logo" class="logo-img">
         </div>
 
-        <!-- Header -->
-        <h1>RNATech</h1>
-        <h2>Reliance Networking & Automation</h2>
+        <!-- Content -->
+        <h1>Website Under Maintenance</h1>
+        <p class="subtitle">
+            We are currently upgrading our systems at <strong>RNATech</strong>. The site will be active in <strong>3 days</strong>. Thank you for visiting.
+        </p>
 
-        <!-- Status Message -->
-        <div class="status-box">
-            <span class="blink">/// SYSTEM ALERT:</span> CONSTRUCTION MODE ACTIVE<br><br>
-            Welcome to RNATech. We are currently upgrading our infrastructure to provide superior automation solutions.<br><br>
-            <strong>ETA:</strong> Active within <span style="color:var(--accent-cyan)">3 working days</span>.<br>
-            Thank you for visiting us.
-        </div>
-
-        <!-- Progress Section -->
-        <div class="progress-wrapper">
+        <!-- Progress Bar -->
+        <div class="progress-section">
             <div class="progress-label">
-                <span>DEPLOYMENT PROGRESS</span>
-                <span id="progress-percent">0%</span>
+                <span>Deployment Progress</span>
+                <span>Est. 3 Days</span>
             </div>
             <div class="progress-track">
-                <div class="progress-bar" id="p-bar"></div>
+                <div class="progress-fill"></div>
             </div>
         </div>
 
-        <!-- Countdown Timer -->
-        <div class="countdown">
-            <div class="cd-unit">
-                <span class="cd-num" id="days">00</span>
-                <span class="cd-txt">Days</span>
+        <!-- Countdown -->
+        <div class="countdown" id="countdown" role="timer" aria-label="Countdown to launch">
+            <div class="time-unit">
+                <span class="time-val" id="days">03</span>
+                <span class="time-lbl">Days</span>
             </div>
-            <div class="cd-unit">
-                <span class="cd-num" id="hours">00</span>
-                <span class="cd-txt">Hours</span>
+            <div class="time-unit">
+                <span class="time-val" id="hours">00</span>
+                <span class="time-lbl">Hours</span>
             </div>
-            <div class="cd-unit">
-                <span class="cd-num" id="minutes">00</span>
-                <span class="cd-txt">Mins</span>
+            <div class="time-unit">
+                <span class="time-val" id="minutes">00</span>
+                <span class="time-lbl">Mins</span>
             </div>
-            <div class="cd-unit">
-                <span class="cd-num" id="seconds">00</span>
-                <span class="cd-txt">Secs</span>
+            <div class="time-unit">
+                <span class="time-val" id="seconds">00</span>
+                <span class="time-lbl">Secs</span>
             </div>
         </div>
 
-        <!-- Action Button -->
-        <button class="btn-notify" onclick="requestNotify()">Request Update</button>
+        <!-- Action -->
+        <a href="mailto:info@rnatech.com" class="btn-contact">Contact Us</a>
 
-    </main>
+        <footer>
+            &copy; 2026 RNATech - Reliance Networking and Automations
+        </footer>
+    </div>
 
+    <!-- Minimal JS for Timer -->
     <script>
-        // --- COUNTDOWN LOGIC ---
-        const dEl = document.getElementById('days');
-        const hEl = document.getElementById('hours');
-        const mEl = document.getElementById('minutes');
-        const sEl = document.getElementById('seconds');
+        // Set countdown to exactly 3 days (72 hours) from page load
+        const countDownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
 
-        // Set deadline to 3 days from now
-        const deadline = new Date();
-        deadline.setDate(deadline.getDate() + 3); 
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
 
-        function updateTimer() {
-            const now = new Date();
-            const diff = deadline - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if (diff <= 0) {
-                dEl.innerText = "00";
-                hEl.innerText = "00";
-                mEl.innerText = "00";
-                sEl.innerText = "00";
-                return;
+            const pad = (n) => n < 10 ? '0' + n : n;
+
+            document.getElementById("days").innerText = pad(days);
+            document.getElementById("hours").innerText = pad(hours);
+            document.getElementById("minutes").innerText = pad(minutes);
+            document.getElementById("seconds").innerText = pad(seconds);
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<span>We are Live!</span>";
             }
-
-            const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-            const h = Math.floor((diff / 1000 / 60 / 60) % 24);
-            const m = Math.floor((diff / 1000 / 60) % 60);
-            const s = Math.floor((diff / 1000) % 60);
-
-            dEl.innerText = d < 10 ? '0' + d : d;
-            hEl.innerText = h < 10 ? '0' + h : h;
-            mEl.innerText = m < 10 ? '0' + m : m;
-            sEl.innerText = s < 10 ? '0' + s : s;
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        // --- PROGRESS BAR SIMULATION ---
-        const pBar = document.getElementById('p-bar');
-        const pText = document.getElementById('progress-percent');
-        
-        // Sync JS number with CSS animation roughly
-        let progress = 0;
-        const targetProgress = 78; // Matches CSS end point
-        
-        const progressInterval = setInterval(() => {
-            if(progress < targetProgress) {
-                progress++;
-                pText.innerText = progress + "%";
-            } else {
-                clearInterval(progressInterval);
-            }
-        }, 50); // Updates every 50ms to match the 4s animation roughly
-
-        // --- INTERACTION ---
-        function requestNotify() {
-            const btn = document.querySelector('.btn-notify');
-            const originalText = btn.innerText;
-            
-            btn.innerText = "ACCESS GRANTED // ADDED";
-            btn.style.background = "var(--accent-cyan)";
-            btn.style.color = "#000";
-
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = "transparent";
-                btn.style.color = "var(--accent-cyan)";
-            }, 3000);
-        }
+        }, 1000);
     </script>
 </body>
 </html>
