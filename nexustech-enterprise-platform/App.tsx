@@ -19,6 +19,7 @@ import SignupPage from './pages/SignupPage';
 import UnifiedMessaging from './components/UnifiedMessaging';
 import ThreeBackground from './components/ThreeBackground';
 import SplashScreen from './components/SplashScreen';
+import AnalyticsProvider from './components/AnalyticsProvider';
 
 type Language = 'bn' | 'en';
 type Theme = 'dark' | 'light';
@@ -367,7 +368,7 @@ const App = () => {
 
   const logout = () => setState(prev => ({ ...prev, user: null }));
 
-  import AnalyticsProvider from './components/AnalyticsProvider';
+
 
   return (
     <AppContext.Provider value={{ state, lang, theme, toggleTheme, setLang, t, addToCart, removeFromCart, updateQuantity, clearCart, logout }}>
