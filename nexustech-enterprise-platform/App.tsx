@@ -367,115 +367,119 @@ const App = () => {
 
   const logout = () => setState(prev => ({ ...prev, user: null }));
 
+  import AnalyticsProvider from './components/AnalyticsProvider';
+
   return (
     <AppContext.Provider value={{ state, lang, theme, toggleTheme, setLang, t, addToCart, removeFromCart, updateQuantity, clearCart, logout }}>
       <Router>
-        <AnimatePresence>
-          {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
-        </AnimatePresence>
-        <div className={`min-h-screen flex flex-col transition-all duration-700 
+        <AnalyticsProvider>
+          <AnimatePresence>
+            {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+          </AnimatePresence>
+          <div className={`min-h-screen flex flex-col transition-all duration-700 
           ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-          <ThreeBackground theme={theme} />
-          <Header />
-          <UnifiedMessaging />
-          <main className="flex-grow pt-20">
-            <AnimatePresence mode="wait">
-              <Routes>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/shop" element={<ShopPage />} />
-                <Route path="/portfolio" element={<PortfolioPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
-                <Route path="/admin/*" element={<AdminDashboard />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-              </Routes>
-            </AnimatePresence>
-          </main>
+            <ThreeBackground theme={theme} />
+            <Header />
+            <UnifiedMessaging />
+            <main className="flex-grow pt-20">
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<LandingPage />} />
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/shop" element={<ShopPage />} />
+                  <Route path="/portfolio" element={<PortfolioPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/dashboard" element={<DashboardPage />} />
+                  <Route path="/admin/*" element={<AdminDashboard />} />
+                  <Route path="/checkout" element={<CheckoutPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/signup" element={<SignupPage />} />
+                </Routes>
+              </AnimatePresence>
+            </main>
 
-          <footer className={`py-16 transition-all duration-500 
+            <footer className={`py-16 transition-all duration-500 
             ${theme === 'dark' ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-900'}`}>
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-12">
-                <div className="max-w-md">
-                  <Link to="/" className="flex items-center gap-3 mb-8 group">
-                    <div className="relative">
-                      <ICONS.Logo theme={theme} />
-                      <div className="absolute inset-0 bg-brand-500/10 blur-xl rounded-full" />
+              <div className="max-w-7xl mx-auto px-6">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-12">
+                  <div className="max-w-md">
+                    <Link to="/" className="flex items-center gap-3 mb-8 group">
+                      <div className="relative">
+                        <ICONS.Logo theme={theme} />
+                        <div className="absolute inset-0 bg-brand-500/10 blur-xl rounded-full" />
+                      </div>
+                      <div className="flex flex-col border-l border-white/10 pl-3">
+                        <span className="text-3xl font-black tracking-[-0.02em] leading-none mb-1">
+                          RNA<span className="text-brand-500">Tech</span>
+                        </span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-tight">
+                          Reliance Network & <br className="hidden md:block" /> Automations
+                        </span>
+                      </div>
+                    </Link>
+                    <p className="text-slate-500 font-medium leading-relaxed text-lg mb-8">
+                      {lang === 'bn'
+                        ? 'বাংলাদেশের শীর্ষস্থানীয় ডিজিটাল সলিউশন প্রোভাইডার। আমরা আপনার ব্যবসাকে নিয়ে যাই আগামীর দোরগোড়ায় আধুনিক প্রযুক্তি এবং নির্ভরযোগ্য সাপোর্টের মাধ্যমে।'
+                        : 'Leading digital solution provider in Bangladesh. We take your business to the doorstep of tomorrow with modern tech and reliable support.'}
+                    </p>
+                    <div className="flex items-center gap-4">
+                      {[
+                        { icon: ICONS.Facebook, name: 'Facebook', url: '#' },
+                        { icon: ICONS.TwitterX, name: 'Twitter', url: '#' },
+                        { icon: ICONS.Linkedin, name: 'LinkedIn', url: '#' },
+                        { icon: ICONS.Instagram, name: 'Instagram', url: '#' }
+                      ].map((social) => (
+                        <a
+                          key={social.name}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-500 hover:border-brand-500/50 hover:bg-brand-500/5 transition-all duration-300 group"
+                          aria-label={social.name}
+                        >
+                          <social.icon />
+                        </a>
+                      ))}
                     </div>
-                    <div className="flex flex-col border-l border-white/10 pl-3">
-                      <span className="text-3xl font-black tracking-[-0.02em] leading-none mb-1">
-                        RNA<span className="text-brand-500">Tech</span>
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 leading-tight">
-                        Reliance Network & <br className="hidden md:block" /> Automations
-                      </span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-16">
+                    <div className="space-y-6">
+                      <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_navigation')}</h4>
+                      <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
+                        <Link to="/" className="hover:text-brand-500 transition-colors">{t('nav_home')}</Link>
+                        <Link to="/about" className="hover:text-brand-500 transition-colors">{t('nav_about')}</Link>
+                        <Link to="/portfolio" className="hover:text-brand-500 transition-colors">{t('nav_portfolio')}</Link>
+                      </div>
                     </div>
-                  </Link>
-                  <p className="text-slate-500 font-medium leading-relaxed text-lg mb-8">
-                    {lang === 'bn'
-                      ? 'বাংলাদেশের শীর্ষস্থানীয় ডিজিটাল সলিউশন প্রোভাইডার। আমরা আপনার ব্যবসাকে নিয়ে যাই আগামীর দোরগোড়ায় আধুনিক প্রযুক্তি এবং নির্ভরযোগ্য সাপোর্টের মাধ্যমে।'
-                      : 'Leading digital solution provider in Bangladesh. We take your business to the doorstep of tomorrow with modern tech and reliable support.'}
-                  </p>
-                  <div className="flex items-center gap-4">
-                    {[
-                      { icon: ICONS.Facebook, name: 'Facebook', url: '#' },
-                      { icon: ICONS.TwitterX, name: 'Twitter', url: '#' },
-                      { icon: ICONS.Linkedin, name: 'LinkedIn', url: '#' },
-                      { icon: ICONS.Instagram, name: 'Instagram', url: '#' }
-                    ].map((social) => (
-                      <a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-brand-500 hover:border-brand-500/50 hover:bg-brand-500/5 transition-all duration-300 group"
-                        aria-label={social.name}
-                      >
-                        <social.icon />
-                      </a>
-                    ))}
+                    <div className="space-y-6">
+                      <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_solutions')}</h4>
+                      <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
+                        <Link to="/services" className="hover:text-brand-500 transition-colors">{t('nav_services')}</Link>
+                        <Link to="/shop" className="hover:text-brand-500 transition-colors">{t('nav_shop')}</Link>
+                      </div>
+                    </div>
+                    <div className="space-y-6">
+                      <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_inquiry')}</h4>
+                      <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
+                        <Link to="/contact" className="hover:text-brand-500 transition-colors">{t('nav_contact')}</Link>
+                        <span className="break-all">hello@rnatech.com.bd</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-16">
-                  <div className="space-y-6">
-                    <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_navigation')}</h4>
-                    <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
-                      <Link to="/" className="hover:text-brand-500 transition-colors">{t('nav_home')}</Link>
-                      <Link to="/about" className="hover:text-brand-500 transition-colors">{t('nav_about')}</Link>
-                      <Link to="/portfolio" className="hover:text-brand-500 transition-colors">{t('nav_portfolio')}</Link>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_solutions')}</h4>
-                    <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
-                      <Link to="/services" className="hover:text-brand-500 transition-colors">{t('nav_services')}</Link>
-                      <Link to="/shop" className="hover:text-brand-500 transition-colors">{t('nav_shop')}</Link>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <h4 className="font-black text-[11px] uppercase tracking-[0.2em] text-brand-500">{t('nav_inquiry')}</h4>
-                    <div className="flex flex-col gap-4 text-sm font-bold text-slate-400">
-                      <Link to="/contact" className="hover:text-brand-500 transition-colors">{t('nav_contact')}</Link>
-                      <span className="break-all">hello@rnatech.com.bd</span>
-                    </div>
+                <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-black uppercase tracking-widest text-slate-500">
+                  <p>{t('footer_copy')}</p>
+                  <div className="flex gap-10">
+                    <a href="#" className="hover:text-brand-500 transition-colors">Privacy</a>
+                    <a href="#" className="hover:text-brand-500 transition-colors">Legal</a>
+                    <a href="#" className="hover:text-brand-500 transition-colors">Security</a>
                   </div>
                 </div>
               </div>
-              <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-black uppercase tracking-widest text-slate-500">
-                <p>{t('footer_copy')}</p>
-                <div className="flex gap-10">
-                  <a href="#" className="hover:text-brand-500 transition-colors">Privacy</a>
-                  <a href="#" className="hover:text-brand-500 transition-colors">Legal</a>
-                  <a href="#" className="hover:text-brand-500 transition-colors">Security</a>
-                </div>
-              </div>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
+        </AnalyticsProvider>
       </Router>
     </AppContext.Provider>
   );
