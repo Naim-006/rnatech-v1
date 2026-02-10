@@ -17,13 +17,13 @@ const UnifiedMessaging = () => {
       name: 'Messenger',
       icon: <ICONS.Messenger />,
       color: 'bg-blue-600',
-      link: 'https://m.me/nexustechbd'
+      link: 'https://m.me/rnatechbd'
     },
     {
       name: 'Telegram',
       icon: <ICONS.Telegram />,
       color: 'bg-sky-500',
-      link: 'https://t.me/nexustechbd'
+      link: 'https://t.me/rnatechbd'
     }
   ];
 

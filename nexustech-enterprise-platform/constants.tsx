@@ -3,7 +3,7 @@ import React from 'react';
 
 export const ICONS = {
   Logo: ({ theme }: { theme: 'dark' | 'light' }) => (
-    <img src={theme === 'dark' ? "/logo.png" : "/logo-transparent.png"} alt="RNATECH Logo" className="w-10 h-10 object-contain" />
+    <img src={theme === 'dark' ? "/logo-dark.png" : "/logo-transparent.png"} alt="RNATECH Logo" className="w-10 h-10 object-contain" />
   ),
   ShoppingCart: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -28,21 +28,6 @@ export const ICONS = {
   Telegram: () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
       <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.257.257-.527.257l.21-3.03 5.51-4.97c.24-.21-.054-.33-.37-.12l-6.81 4.28-2.94-.92c-.64-.2-.65-.64.13-.94l11.5-4.43c.53-.19 1 .13.84.89z" />
-    </svg>
-  ),
-  Facebook: () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    </svg>
-  ),
-  YouTube: () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-    </svg>
-  ),
-  LinkedIn: () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   ),
   Cpu: () => (
@@ -90,6 +75,31 @@ export const ICONS = {
       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
   ),
+  Facebook: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  ),
+  Twitter: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M22 4s-1 2.17-2.67 3a4.42 4.42 0 0 1 .17 1c0 2.83-2 5-5 5-2.67 0-4-1.33-4-1.33s.67 1 2 2.67-1 2-3 2c-2.33 0-3-1.67-3-1.67S4.67 18.67 6 20c-1.33 0-2.67-.67-3.33-1.33.67 0 1.33-.33 1.67-1-.67-.67-1.33-1.67-1-2.67.67.33 1.33.33 2 .33a1.69 1.69 0 0 1-1-1.33 1.58 1.58 0 0 1 0-.67c.67.33 1.33.33 2 .33.33 0 .67-.17.67-.5s-.33-1.33-1.33-1.67c-1-.33-1.67-1.67-1.33-3.33A5.92 5.92 0 0 1 12 11a4.42 4.42 0 0 1-1-2c0-1 .67-2.33 1.67-3a4.42 4.42 0 0 1 2-.33c1 0 2 .67 2.67 1.33-.33 0-.67.17-.67.33 0 0 1.33-.33 2.33.33" />
+    </svg>
+  ),
+  TwitterX: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg>
+  ),
+  Linkedin: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+    </svg>
+  ),
+  Instagram: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  ),
   Menu: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
       <line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" />
@@ -98,6 +108,11 @@ export const ICONS = {
   X: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
       <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  ),
+  Search: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
   )
 };
@@ -119,102 +134,412 @@ export const TRANSLATIONS: Record<string, { bn: string; en: string }> = {
   solutions_desc: { bn: 'আপনার ব্যবসার ধরন অনুযায়ী আমরা দিচ্ছি সেরা সার্ভিস', en: 'We provide the best services according to your business type' },
   support_title: { bn: 'দেশি সাপোর্ট, বিশ্বমানের প্রযুক্তি।', en: 'Local Support, Global Technology.' },
   support_desc: { bn: 'আমরা জানি আমাদের দেশের ব্যবসায়ীদের চাহিদা। তাই আমরা দিচ্ছি ২৪/৭ সরাসরি বাংলা সাপোর্ট এবং খুব সহজে ব্যবহারযোগ্য ইন্টারফেস।', en: 'We know the needs of businessmen in our country. So we provide 24/7 direct Bangla support and easy-to-use interfaces.' },
-  footer_copy: { bn: '© ২০২৪ নেক্সাসটেক বাংলাদেশ লিমিটেড। সকল অধিকার সংরক্ষিত।', en: '© 2024 NexusTech Bangladesh Ltd. All rights reserved.' }
+  footer_copy: { bn: '© ২০২৪ আরএনএটেক বাংলাদেশ লিমিটেড। সকল অধিকার সংরক্ষিত।', en: '© 2024 RNATech Bangladesh Ltd. All rights reserved.' },
+  btn_dashboard: { bn: 'ড্যাশবোর্ড', en: 'Dashboard' },
+  btn_login: { bn: 'লগইন', en: 'Login' },
+  explore_packages: { bn: 'বিস্তারিত', en: 'Explore Packages' },
+  switch_language: { bn: 'ভাষা পরিবর্তন করুন', en: 'Switch Language' },
+  connect_with_us: { bn: 'আমাদের সাথে যোগাযোগ করুন', en: 'Connect with us' },
+  reliable_digitization: { bn: 'নির্ভরযোগ্য ডিজিটাল সেবা', en: 'Reliable Digitization' },
+  nav_navigation: { bn: 'নেভিগেশন', en: 'Navigation' },
+  nav_solutions: { bn: 'সলিউশন', en: 'Solutions' },
+  nav_inquiry: { bn: 'অনুসন্ধান', en: 'Inquiry' },
+  stat_projects: { bn: 'সফল প্রজেক্ট', en: 'Projects Done' },
+  stat_clients: { bn: 'হ্যাপি ক্লায়েন্ট', en: 'Happy Clients' },
+  stat_team: { bn: 'এক্সপার্ট টিম', en: 'Expert Team' },
+  stat_districts: { bn: 'সার্ভিস এরিয়া', en: 'Service Areas' },
+  service_web_title: { bn: 'ওয়েবসাইট সলিউশন', en: 'Web Engineering' },
+  service_web_desc: { bn: 'ই-কমার্স থেকে শুরু করে কাস্টম পোর্টফোলিও - আপনার ব্যবসার জন্য সেরা ওয়েবসাইট।', en: 'From high-conversion e-commerce engines to luxury digital portfolios.' },
+  service_pos_title: { bn: 'স্মার্ট পজ সিস্টেম', en: 'Smart POS Hub' },
+  service_pos_desc: { bn: 'রিটেল বা রেস্টুরেন্টের জন্য ক্লাউড-ভিত্তিক পজ সফটওয়্যার এবং হার্ডওয়্যার সেটআপ।', en: 'Cloud-based POS software and full hardware setups for retail & restaurants.' },
+  service_app_title: { bn: 'মোবাইল অ্যাপ্লিকেশন', en: 'Mobile Ecosystems' },
+  service_app_desc: { bn: 'আইওএস (iOS) এবং অ্যান্ড্রয়েড (Android) এর জন্য নেক্সট-জেন এবং হাই-পারফরম্যান্স অ্যাপ।', en: 'Next-gen, high-performance applications for iOS and Android platforms.' },
+  tag_support: { bn: '২৪/৭ সরাসরি কল', en: '24/7 Enterprise Support' },
+  tag_data_center: { bn: 'লোকাল ডাটা সেন্টার', en: 'On-Shore Data Centers' },
+  tag_custom_design: { bn: 'কাস্টম ডিজাইন', en: 'Bespoke Engineering' },
+  btn_partnership: { bn: 'আজই শুরু করুন', en: 'Start Partnership' },
+  about_title_1: { bn: 'প্রযুক্তির মাধ্যমে', en: 'Transforming Bangladesh' },
+  about_title_2: { bn: 'বাংলাদেশকে বদলে দিচ্ছি', en: 'With Technology' },
+  about_desc: { bn: 'আরএনএটেক একটি নেতৃস্থানীয় প্রযুক্তি প্রতিষ্ঠান যা বাংলাদেশের ব্যবসায়ী এবং শিল্প খাতের ডিজিটালাইজেশনে কাজ করছে।', en: 'RNATECH is a leading technology company working on the digitalization of business and industrial sectors in Bangladesh.' },
+  about_mission_title: { bn: 'আমাদের লক্ষ্য', en: 'Our Mission' },
+  about_mission_desc: { bn: 'প্রতিটি ছোট এবং মাঝারি ব্যবসাকে স্মার্ট প্রযুক্তির আওতায় নিয়ে আসা যাতে তারা আরও দক্ষ এবং লাভজনক হতে পারে।', en: 'To bring every small and medium business under smart technology so they can become more efficient and profitable.' },
+  about_why_title: { bn: 'কেন আমাদের বেছে নেবেন?', en: 'Why Choose Us?' },
+  about_stat_focus: { bn: 'লোকাল ফোকাস', en: 'Local Focus' },
+  about_stat_quality: { bn: 'কোয়ালিটি টেক', en: 'Quality Tech' },
+  services_title_1: { bn: 'আমাদের সলিউশন', en: 'What We Offer' },
+  services_title_2: { bn: 'ব্যবসার জন্য স্মার্ট আইডিয়া', en: 'Smart Solutions for Growth' },
+  services_desc: { bn: 'আমাদের বিশেষায়িত ক্যাটাগরি থেকে আপনার ব্যবসার জন্য সেরাটি বেছে নিন।', en: 'Choose from our specialized categories building digital excellence for the Bangladeshi market.' },
+  services_custom_title: { bn: 'কাস্টম প্ল্যান প্রয়োজন?', en: 'Need a custom plan?' },
+  services_custom_desc: { bn: 'আপনার প্রজেক্ট যদি এই প্যাকেজগুলোর সাথে না মিলে, তবে আমাদের টিম আপনার জন্য কাস্টম রোডম্যাপ তৈরি করবে।', en: "If your project doesn't fit into these tiers, our engineering team can build a custom roadmap just for you." },
+  services_btn_specialist: { bn: 'স্পেশালিস্টের সাথে কথা বলুন', en: 'Talk to Specialist' },
+  services_btn_order: { bn: 'অর্ডার করুন', en: 'Order Now' },
+  shop_hero_badge: { bn: 'ইন্ডাস্ট্রিয়াল গ্রেড হার্ডওয়্যার', en: 'Industrial Grade Hardware' },
+  shop_title_1: { bn: 'আরএনএটেক', en: 'RNATECH' },
+  shop_title_2: { bn: 'হার্ডওয়্যার শপ', en: 'IoT Shop' },
+  shop_desc: { bn: 'সবচেয়ে উন্নত আইওটি হার্ডওয়্যার এবং অটোমেশন ইকুইপমেন্ট দিয়ে আপনার ব্যবসাকে সাজান।', en: 'Equip your business with the latest in automation, sensing, and retail technology. Global quality, local support.' },
+  shop_stat_items: { bn: 'মোট আইটেম', en: 'Total Items' },
+  shop_stat_standard: { bn: 'গ্লোবাল কিউসি', en: 'Global QC' },
+  shop_add_to_cart: { bn: 'কার্টে যোগ করুন', en: 'Add to Cart' },
+  contact_title: { bn: 'যোগাযোগ করুন', en: 'Contact Us' },
+  contact_desc: { bn: 'আপনার যে কোনো প্রজেক্ট বা জিজ্ঞাসা থাকলে আমাদের মেসেজ দিন। আমাদের টিম ২৪ ঘণ্টার মধ্যে যোগাযোগ করবে।', en: 'Drop us a message for any project or inquiry. Our team will get back to you within 24 hours.' },
+  contact_address_title: { bn: 'সরাসরি অফিস', en: 'Our Office' },
+  contact_address_val: { bn: 'গুলশান-১, ঢাকা-১২১২, বাংলাদেশ', en: 'Gulshan-1, Dhaka-1212, Bangladesh' },
+  contact_whatsapp_title: { bn: 'হোয়াটসঅ্যাপ সাপোর্ট', en: 'WhatsApp Support' },
+  contact_form_name: { bn: 'আপনার নাম', en: 'Your Name' },
+  contact_form_name_placeholder: { bn: 'যেমন: রহিম আহমেদ', en: 'Ex: John Doe' },
+  contact_form_mobile: { bn: 'মোবাইল নম্বর', en: 'Mobile Number' },
+  contact_form_mobile_placeholder: { bn: '০১৭XXXXXXXX', en: '017XXXXXXXX' },
+  contact_form_service: { bn: 'আপনার সার্ভিস প্রয়োজন', en: 'Required Service' },
+  contact_form_service_option1: { bn: 'ওয়েবসাইট ডেভেলপমেন্ট', en: 'Web Development' },
+  contact_form_service_option2: { bn: 'পজ (POS) সিস্টেম', en: 'POS System' },
+  contact_form_service_option3: { bn: 'মোবাইল অ্যাপ', en: 'Mobile App' },
+  contact_form_service_option4: { bn: 'ইন্ডাস্ট্রিয়াল আইওটি', en: 'Industrial IoT' },
+  contact_form_message: { bn: 'বিস্তারিত মেসেজ', en: 'Message Details' },
+  contact_form_message_placeholder: { bn: 'আপনার প্রয়োজনীয় তথ্য লিখুন...', en: 'Write your requirements details...' },
+  contact_form_btn: { bn: 'মেসেজ পাঠান', en: 'Send Message' },
+  // About Page Redesign
+  about_hero_badge: { bn: 'ভবিষ্যতের প্রযুক্তি আজই', en: 'Future Technology Today' },
+  about_vision_title: { bn: 'আমাদের ভিশন', en: 'Our Vision' },
+  about_vision_desc: { bn: 'বাংলাদেশের প্রতিটি শিল্পখাতকে গ্লোবাল স্ট্যান্ডার্ডে নিয়ে যাওয়া।', en: 'Leading every industrial sector of Bangladesh to global standards.' },
+  about_value_integrity: { bn: 'সততা', en: 'Integrity' },
+  about_value_innovation: { bn: 'উদ্ভাবন', en: 'Innovation' },
+  about_value_quality: { bn: 'গুণমান', en: 'Quality' },
+  about_value_global: { bn: 'বৈশ্বিক মান', en: 'Global Standard' },
+  about_timeline_title: { bn: 'আমাদের যাত্রা', en: 'Our Journey' },
+  about_timeline_2020: { bn: 'শুরুয়াত ও গবেষণা', en: 'Foundation & Research' },
+  about_timeline_2022: { bn: 'প্রথম আইওটি সলিউশন', en: 'First IoT Solution' },
+  about_timeline_2024: { bn: 'আরএনএটেক হিসেবে রি-ব্র্যান্ডিং', en: 'Rebranding as RNATech' },
+  about_stack_title: { bn: 'আমাদের টেক স্ট্যাক', en: 'Our Tech Stack' },
+  // Contact Page Redesign
+  contact_map_title: { bn: 'আমাদের অবস্থান', en: 'Find Us on Map' },
+  contact_social_title: { bn: 'সোশ্যাল মিডিয়া', en: 'Social Ecosystem' },
+  contact_email_sales: { bn: 'সেলস কোয়েরি', en: 'Sales Inquiries' },
+  contact_email_support: { bn: 'কাস্টমার সাপোর্ট', en: 'Customer Support' },
+  contact_hours_title: { bn: 'অফিস সময়', en: 'Business Hours' },
+  contact_hours_val: { bn: 'শনিবার - বৃহস্পতিবার: সকাল ৯টা - সন্ধ্যা ৬টা', en: 'Sat - Thu: 9:00 AM - 6:00 PM' },
+  contact_hours_off: { bn: 'শুক্রবার: বন্ধ', en: 'Friday: Closed' },
+  // Auth Pages
+  auth_login_title: { bn: 'লগইন করুন', en: 'Welcome Back' },
+  auth_login_subtitle: { bn: 'আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন', en: 'Enter your credentials to access your account' },
+  auth_signup_title: { bn: 'অ্যাকাউন্ট তৈরি করুন', en: 'Create Account' },
+  auth_signup_subtitle: { bn: 'নতুন ফিচারের জন্য আমাদের সাথে যুক্ত হোন', en: 'Join us to explore premium features' },
+  auth_email: { bn: 'ইমেইল অ্যাড্রেস', en: 'Email Address' },
+  auth_password: { bn: 'পাসওয়ার্ড', en: 'Password' },
+  auth_name: { bn: 'পুরো নাম', en: 'Full Name' },
+  auth_phone: { bn: 'ফোন নম্বর', en: 'Phone Number' },
+  auth_remember: { bn: 'আমাকে মনে রাখুন', en: 'Remember Me' },
+  auth_forgot: { bn: 'পাসওয়ার্ড ভুলে গেছেন?', en: 'Forgot Password?' },
+  auth_no_account: { bn: 'অ্যাকাউন্ট নেই?', en: "Don't have an account?" },
+  auth_have_account: { bn: 'আগেই অ্যাকাউন্ট আছে?', en: 'Already have an account?' },
+  auth_btn_login: { bn: 'লগইন', en: 'Login Now' },
+  auth_btn_signup: { bn: 'নিবন্ধন করুন', en: 'Register Now' },
+  auth_role_customer: { bn: 'কাস্টমার', en: 'Customer' },
+  auth_role_admin: { bn: 'সিস্টেম অ্যাডমিন', en: 'System Admin' },
+  // Checkout Page
+  checkout_title: { bn: 'চেকআউট', en: 'Checkout' },
+  checkout_subtitle: { bn: 'আপনার অর্ডার সম্পন্ন করুন', en: 'Complete your order' },
+  checkout_cart_empty: { bn: 'আপনার কার্ট খালি', en: 'Your cart is empty' },
+  checkout_cart_items: { bn: 'কার্টের আইটেম', en: 'Cart Items' },
+  checkout_customer_details: { bn: 'অর্ডার ডিটেইলস', en: 'Customer Details' },
+  checkout_payment_method: { bn: 'পেমেন্ট মেথড', en: 'Payment Method' },
+  checkout_summary: { bn: 'অর্ডার সামারি', en: 'Order Summary' },
+  checkout_subtotal: { bn: 'সাবটোটাল', en: 'Subtotal' },
+  checkout_delivery: { bn: 'ডেলিভারি চার্জ', en: 'Delivery Fee' },
+  checkout_total: { bn: 'সর্বমোট', en: 'Total' },
+  checkout_place_order: { bn: 'অর্ডার নিশ্চিত করুন', en: 'Place Order' },
+  checkout_address: { bn: 'ঠিকানা', en: 'Address' },
+  checkout_cod: { bn: 'ক্যাশ অন ডেলিভারি', en: 'Cash on Delivery' },
+  checkout_digital: { bn: 'ডিজিটাল পেমেন্ট', en: 'Digital Payment' },
+  checkout_success_title: { bn: 'ধন্যবাদ!', en: 'Thank You!' },
+  checkout_success_desc: { bn: 'আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে। আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।', en: 'Your order has been placed successfully. Our representative will contact you soon.' },
+  checkout_order_id: { bn: 'অর্ডার আইডি', en: 'Order ID' },
+  checkout_continue_shopping: { bn: 'আরো কিনুন', en: 'Continue Shopping' }
 };
 
 export const MOCK_SERVICES: any[] = [
+  // --- WEBSITES ---
   {
-    id: 'sv-startup',
-    name_bn: 'স্টার্টআপ ল্যান্ডিং পেজ',
-    name_en: 'Startup Landing Page',
-    desc_bn: 'নতুন ব্যবসার জন্য আকর্ষণীয় ও প্রফেশনাল ল্যান্ডিং পেজ।',
-    desc_en: 'Attractive and professional landing page for new businesses.',
-    extended_desc_en: 'A high-conversion landing page optimized for lead generation. Perfect for new product launches or local business presence.',
-    extended_desc_bn: 'লিড জেনারেশনের জন্য অপ্টিমাইজ করা একটি হাই-কনভার্সন ল্যান্ডিং পেজ। নতুন পণ্য লঞ্চ বা স্থানীয় ব্যবসার উপস্থিতির জন্য আদর্শ।',
-    price: 12000,
-    timeline_bn: '৫-৭ দিন',
-    timeline_en: '5-7 Days',
+    id: 'web-ecom-beg',
+    name_en: 'E-commerce Beginner',
+    name_bn: 'ই-কমার্স বিগিনার',
+    desc_en: 'Perfect for small shops starting online sales.',
+    desc_bn: 'অনলাইনে পণ্য বিক্রির জন্য ছোট দোকানের জন্য আদর্শ।',
+    price: 15000,
+    timeline: '7-10 Days',
+    features_en: ['Single Vendor', 'bKash Integration', 'Order Management', 'Basic SEO'],
+    features_bn: ['সিঙ্গেল ভেন্ডর', 'বিকাশ পেমেন্ট', 'অর্ডার ম্যানেজমেন্ট', 'বেসিক এসইও'],
     type: 'website',
-    details_en: 'Our Startup Package is designed to give you an instant web presence. We focus on conversion-ready designs that speak to your target audience.',
-    details_bn: 'আমাদের স্টার্টআপ প্যাকেজটি আপনার ব্যবসার তাৎক্ষণিক অনলাইন উপস্থিতির জন্য ডিজাইন করা হয়েছে। আমরা কনভার্সন-ফ্রেন্ডলি ডিজাইনের ওপর গুরুত্ব দিই।',
-    features_bn: ['.com ডোমেইন (১ বছর ফ্রি)', '৫জিবি সুপার ফাস্ট হোস্টিং', 'ফ্রি এসএসএল (SSL)', 'অন-পেজ এসইও (SEO)', '১টি বিজনেস ইমেল'],
-    features_en: ['.com Domain (1yr Free)', '5GB Super Fast Hosting', 'Free SSL Certificate', 'On-Page SEO', '1 Business Email']
+    category: 'E-commerce',
+    tier: 'Beginner'
   },
   {
-    id: 'sv-business',
-    name_bn: 'কর্পোরেট বিজনেস প্রো',
-    name_en: 'Corporate Business Pro',
-    desc_bn: 'প্রতিষ্ঠিত কোম্পানির জন্য পূর্ণাঙ্গ ডায়নামিক ওয়েবসাইট।',
-    desc_en: 'Complete dynamic website for established companies.',
-    extended_desc_en: 'Multi-page dynamic CMS website with high-end performance, custom graphics, and full management dashboard.',
-    extended_desc_bn: 'হাই-এন্ড পারফরম্যান্স, কাস্টম গ্রাফিক্স এবং পূর্ণাঙ্গ ম্যানেজমেন্ট ড্যাশবোর্ড সহ মাল্টি-পেজ ডায়নামিক সিএমএস ওয়েবসাইট।',
+    id: 'web-ecom-std',
+    name_en: 'E-commerce Standard',
+    name_bn: 'ই-কমার্স স্ট্যান্ডার্ড',
+    desc_en: 'Professional store with inventory and SMS.',
+    desc_bn: 'ইনভেন্টরি এবং এসএমএস সহ প্রফেশনাল অনলাইন স্টোর।',
     price: 35000,
-    timeline_bn: '১৫-২০ দিন',
-    timeline_en: '15-20 Days',
+    timeline: '15-20 Days',
+    features_en: ['Inventory System', 'SMS Notifications', 'Advanced Analytics', 'Premium Hosting'],
+    features_bn: ['ইনভেন্টরি সিস্টেম', 'এসএমএস নোটিফিকেশন', 'অ্যাডভান্সড অ্যানালিটিক্স', 'প্রিমিয়াম হোস্টিং'],
     type: 'website',
-    details_en: 'The Corporate Pro tier offers a dynamic CMS-based solution. Perfect for companies needing frequent updates and a strong professional image.',
-    details_bn: 'কর্পোরেট প্রো টায়ারটি একটি ডায়নামিক সিএমএস-ভিত্তিক সলিউশন প্রদান করে। এটি নিয়মিত আপডেট এবং প্রফেশনাল ইমেজের জন্য আদর্শ।',
-    features_bn: ['.com.bd ডোমেইন সাপোর্ট', 'আনলিমিটেড হোস্টিং', 'অ্যাডভান্সড এসইও অপ্টিমাইজেশন', 'গুগল ম্যাপ ইন্টিগ্রেশন', '১০টি প্রফেশনাল ইমেল', 'লাইভ চ্যাট সাপোর্ট'],
-    features_en: ['.com.bd Domain Support', 'Unlimited SSD Hosting', 'Advanced SEO Optimization', 'Google Maps Integration', '10 Professional Emails', 'Live Chat Support']
+    category: 'E-commerce',
+    tier: 'Standard'
   },
   {
-    id: 'sv-ecommerce',
-    name_bn: 'ফুল ই-কমার্স সলিউশন',
-    name_en: 'Full E-commerce Solution',
-    desc_bn: 'বিকাশ, নগদ পেমেন্ট সহ অনলাইনে পণ্য বিক্রির সেরা প্ল্যাটফর্ম।',
-    desc_en: 'Best platform for online sales including bKash, Nagad payments.',
-    extended_desc_en: 'Complete store management with automated SMS notifications, inventory tracking, and multi-vendor capabilities.',
-    extended_desc_bn: 'অটোমেটেড এসএমএস নোটিফিকেশন, ইনভেন্টরি ট্র্যাকিং এবং মাল্টি-ভেন্ডার সুবিধা সহ পূর্ণাঙ্গ স্টোর ম্যানেজমেন্ট।',
-    price: 55000,
-    timeline_bn: '২৫-৩০ দিন',
-    timeline_en: '25-30 Days',
+    id: 'web-ecom-ent',
+    name_en: 'E-commerce Enterprise',
+    name_bn: 'ই-কমার্স এন্টারপ্রাইজ',
+    desc_en: 'Full multi-vendor marketplace solution.',
+    desc_bn: 'পূর্ণাঙ্গ মাল্টি-ভেন্ডার মার্কেটপ্লেস সলিউশন।',
+    price: 75000,
+    timeline: '30-45 Days',
+    features_en: ['Multi-vendor Support', 'iOS/Android App Sync', 'Dedicated Server', 'Lifetime Support'],
+    features_bn: ['মাল্টি-ভেন্ডার সাপোর্ট', 'মোবাইল অ্যাপ সিঙ্ক', 'ডেডিকেটেড সার্ভার', 'লাইফটাইম সাপোর্ট'],
     type: 'website',
-    details_en: 'A high-conversion e-commerce engine tailored for the Bangladeshi market. Includes seamless payment gateway integration and inventory tools.',
-    details_bn: 'বাংলাদেশি বাজারের জন্য তৈরি একটি হাই-কনভার্সন ই-কমার্স ইঞ্জিন। এতে পেমেন্ট গেটওয়ে এবং ইনভেন্টরি টুলস অন্তর্ভুক্ত রয়েছে।',
-    features_bn: ['বিকাশ/নগদ/কার্ড পেমেন্ট', 'ইনভেন্টরি ম্যানেজমেন্ট', 'কাস্টমার ড্যাশবোর্ড', 'অর্ডার ট্র্যাকিং সিস্টেম', 'প্রোডাক্ট এসইও প্রো', '১ বছরের মেইনটেইনেন্স'],
-    features_en: ['bKash/Nagad/Card Payment', 'Inventory Management', 'Customer Dashboard', 'Order Tracking System', 'Product SEO Pro', '1 Year Maintenance']
+    category: 'E-commerce',
+    tier: 'Enterprise'
   },
   {
-    id: 'sv-app-custom',
-    name_bn: 'কাস্টম মোবাইল অ্যাপ (Android/iOS)',
-    name_en: 'Custom Mobile App (Hybrid)',
-    desc_bn: 'আধুনিক ইউজার ইন্টারফেস সহ হাই-পারফরম্যান্স মোবাইল অ্যাপ্লিকেশন।',
-    desc_en: 'High-performance mobile application with modern user interface.',
-    extended_desc_en: 'Cross-platform mobile experience with real-time updates, secure authentication, and cloud infrastructure.',
-    extended_desc_bn: 'রিয়েল-টাইম আপডেট, সুরক্ষিত প্রমাণীকরণ এবং ক্লাউড ইনফ্রাস্ট্রাকচার সহ ক্রস-প্ল্যাটফর্ম মোবাইল অভিজ্ঞতা।',
-    price: 95000,
-    timeline_bn: '২-৩ মাস',
-    timeline_en: '2-3 Months',
+    id: 'web-port-beg',
+    name_en: 'Portfolio Beginner',
+    name_bn: 'পোর্টফোলিও বিগিনার',
+    desc_en: 'Elegant single-page portfolio for individuals.',
+    desc_bn: 'ব্যক্তিগত ব্যবহারের জন্য সুন্দর সিঙ্গেল-পেজ পোর্টফোলিও।',
+    price: 8000,
+    timeline: '3-5 Days',
+    features_en: ['Single Page', 'Contact Form', 'Mobile Responsive', 'Free Domain'],
+    features_bn: ['সিঙ্গেল পেজ', 'কন্টাক্ট ফর্ম', 'মোবাইল রেসপন্সিভ', 'ফ্রি ডোমেইন'],
+    type: 'website',
+    category: 'Portfolio',
+    tier: 'Beginner'
+  },
+  {
+    id: 'web-port-std',
+    name_en: 'Portfolio Standard',
+    name_bn: 'পোর্টফোলিও স্ট্যান্ডার্ড',
+    desc_en: 'Multi-page creative portfolio with animations.',
+    desc_bn: 'অ্যানিমেশন সহ মাল্টি-পেজ ক্রিয়েটিভ পোর্টফোলিও।',
+    price: 18000,
+    timeline: '7-10 Days',
+    features_en: ['Multiple Pages', 'Dynamic Gallery', 'GSAP Animations', 'SEO Optimized'],
+    features_bn: ['মাল্টিপল পেজ', 'ডায়নামিক গ্যালারি', 'অ্যানিমেশন', 'এসইও অপ্টিমাইজড'],
+    type: 'website',
+    category: 'Portfolio',
+    tier: 'Standard'
+  },
+  {
+    id: 'web-port-ent',
+    name_en: 'Portfolio Enterprise',
+    name_bn: 'পোর্টফোলিও এন্টারপ্রাইজ',
+    desc_en: 'Luxury agency website with high-end visuals.',
+    desc_bn: 'হাই-এন্ড ভিজ্যুয়াল সহ লাক্সারি এজেন্সি ওয়েবসাইট।',
+    price: 45000,
+    timeline: '15-20 Days',
+    features_en: ['Custom WebGL', 'Exclusive Graphics', 'Priority Support', 'Content Writing'],
+    features_bn: ['কাস্টম গ্রাফিক্স', 'এক্সক্লুসিভ ডিজাইন', 'প্রায়োরিটি সাপোর্ট', 'কন্টেন্ট রাইটিং'],
+    type: 'website',
+    category: 'Portfolio',
+    tier: 'Enterprise'
+  },
+
+  // --- WEBSITES: BLOG ---
+  {
+    id: 'web-blog-beg',
+    name_en: 'Personal Blog Starter',
+    name_bn: 'পার্সোনাল ব্লগ স্টার্টার',
+    desc_en: 'Simple blog for sharing your stories.',
+    desc_bn: 'আপনার গল্প শেয়ার করার জন্য সহজ ব্লগ সাইট।',
+    price: 10000,
+    timeline: '5-7 Days',
+    features_en: ['Minimal Design', 'SEO Ready', 'Social Sharing', 'Google Analytics'],
+    features_bn: ['মিনিমাল ডিজাইন', 'এসইও রেডি', 'সোশ্যাল শেয়ারিং', 'গুগল অ্যানালিটিক্স'],
+    type: 'website',
+    category: 'Blog',
+    tier: 'Beginner'
+  },
+  {
+    id: 'web-blog-std',
+    name_en: 'Pro Content Blog',
+    name_bn: 'প্রো কন্টেন্ট ব্লগ',
+    desc_en: 'Monetized blog for professional writers.',
+    desc_bn: 'প্রফেশনাল রাইটারদের জন্য মনেটাইজেশন উপযুক্ত ব্লগ।',
+    price: 22000,
+    timeline: '10-14 Days',
+    features_en: ['AdSense Ready', 'Newsletter Integration', 'Advanced Tags', 'Fast Loading'],
+    features_bn: ['অ্যাডসেন্স রেডি', 'নিউজলেটার ইন্টিগ্রেশন', 'অ্যাডভান্সড ট্যাগ', 'ফাস্ট লোডিং'],
+    type: 'website',
+    category: 'Blog',
+    tier: 'Standard'
+  },
+
+  // --- WEBSITES: NEWS/PORTAL ---
+  {
+    id: 'web-news-std',
+    name_en: 'News Portal Standard',
+    name_bn: 'নিউজ পোর্টাল স্ট্যান্ডার্ড',
+    desc_en: 'Dynamic news portal with categorization.',
+    desc_bn: 'ক্যাটাগরি সহ ডায়নামিক নিউজ পোর্টাল।',
+    price: 40000,
+    timeline: '20-25 Days',
+    features_en: ['News Categories', 'Video Support', 'Breaking News Ticker', 'Mobile Friendly'],
+    features_bn: ['নিউজ ক্যাটাগরি', 'ভিডিও সাপোর্ট', 'ব্রেকিং নিউজ স্টিকার', 'মোবাইল ফ্রেন্ডলি'],
+    type: 'website',
+    category: 'News/Portal',
+    tier: 'Standard'
+  },
+  {
+    id: 'web-news-ent',
+    name_en: 'Enterprise News Agency',
+    name_bn: 'এন্টারপ্রাইজ নিউজ এজেন্সি',
+    desc_en: 'Full agency portal for heavy traffic.',
+    desc_bn: 'ভারী ট্রাফিকের জন্য পূর্ণাঙ্গ নিউজ এজেন্সি পোর্টাল।',
+    price: 85000,
+    timeline: '45-60 Days',
+    features_en: ['Staff Management', 'Ad Server Sync', 'Live Streaming Integration', 'Dedicated DB'],
+    features_bn: ['স্টাফ ম্যানেজমেন্ট', 'অ্যাড সার্ভার সিঙ্ক', 'লাইভ স্ট্রিমিং', 'ডেডিকেটেড ডাটাবেস'],
+    type: 'website',
+    category: 'News/Portal',
+    tier: 'Enterprise'
+  },
+
+  // --- WEBSITES: LANDING PAGE ---
+  {
+    id: 'web-land-beg',
+    name_en: 'Starter Landing Page',
+    name_bn: 'স্টার্টার ল্যান্ডিং পেজ',
+    desc_en: 'Single-page landing for startups.',
+    desc_bn: 'স্টার্টআপদের জন্য সিঙ্গেল-পেজ ল্যান্ডিং পেজ।',
+    price: 8000,
+    timeline: '3-4 Days',
+    features_en: ['Single Page', 'Lead Capture Form', 'Mobile Responsive', 'Fast Hosting'],
+    features_bn: ['সিঙ্গেল পেজ', 'লিড ক্যাপচার ফর্ম', 'মোবাইল রেসপন্সিভ', 'ফাস্ট হোস্টিং'],
+    type: 'website',
+    category: 'Landing Page',
+    tier: 'Beginner'
+  },
+  {
+    id: 'web-land-pro',
+    name_en: 'High-Conversion Landing',
+    name_bn: 'হাই-কনভার্সন ল্যান্ডিং',
+    desc_en: 'Ads-optimized page for high sales.',
+    desc_bn: 'বেশি বিক্রির জন্য অ্যাডস-অপ্টিমাইজড পেজ।',
+    price: 15000,
+    timeline: '5-7 Days',
+    features_en: ['A/B Testing Support', 'Pixel/API Integration', 'Copywriting Help', 'Premium Graphics'],
+    features_bn: ['এ/বি টেস্টিং সাপোর্ট', 'পিক্সেল/এপিআই', 'কপিরাইটিং সহায়তা', 'প্রিমিয়াম গ্রাফিক্স'],
+    type: 'website',
+    category: 'Landing Page',
+    tier: 'Standard'
+  },
+
+
+
+  // --- SMART POS ---
+  {
+    id: 'pos-app-2pc',
+    name_en: 'POS App - 2 PC',
+    name_bn: 'পজ অ্যাপ - ২ পিসি',
+    desc_en: 'Cloud-based POS for up to 2 workstations.',
+    desc_bn: '২টি কম্পিউটার পর্যন্ত ক্লাউড-ভিত্তিক পজ সফটওয়্যার।',
+    price: 12000,
+    timeline: '1 Day Setup',
+    features_en: ['Sales Tracking', 'Inventory', 'Report Generation', 'Mobile Admin'],
+    features_bn: ['সেলস ট্র্যাকিং', 'ইনভেন্টরি', 'রিপোর্ট জেনারেশন', 'মোবাইল অ্যাডমিন'],
+    type: 'pos',
+    category: 'Only App',
+    tier: '2 PC'
+  },
+  {
+    id: 'pos-app-8pc',
+    name_en: 'POS App - 8 PC',
+    name_bn: 'পজ অ্যাপ - ৮ পিসি',
+    desc_en: 'Scaling business solution for up to 8 PCs.',
+    desc_bn: '৮টি পিসি পর্যন্ত বড় ব্যবসায়িক সলিউশন।',
+    price: 35000,
+    timeline: '2 Days Setup',
+    features_en: ['Multi-branch Sync', 'Employee Logging', 'Wholesale Module', '24/7 Support'],
+    features_bn: ['মাল্টি-ব্রাঞ্চ সিঙ্ক', 'এমপ্লয়ি লগিং', 'হোলসেল মডিউল', '২৪/৭ সাপোর্ট'],
+    type: 'pos',
+    category: 'Only App',
+    tier: '8 PC'
+  },
+  {
+    id: 'pos-full-2pc',
+    name_en: 'Full POS Setup - 2 PC',
+    name_bn: 'ফুল পজ সেটআপ - ২ পিসি',
+    desc_en: 'Hardware + App for a complete store setup.',
+    desc_bn: 'পূর্ণাঙ্গ স্টোর সেটআপের জন্য হার্ডওয়্যার + অ্যাপ।',
+    price: 65000,
+    timeline: '3-5 Days',
+    features_en: ['2 POS Printers', 'Cash Drawer', 'Barcode Scanner', 'App Setup'],
+    features_bn: ['২টি পজ প্রিন্টার', 'ক্যাশ ড্রয়ার', 'বারকোড স্ক্যানার', 'অ্যাপ সেটআপ'],
+    type: 'pos',
+    category: 'Full Setup',
+    tier: '2 PC'
+  },
+  {
+    id: 'pos-full-ent',
+    name_en: 'Full POS Enterprise',
+    name_bn: 'ফুল পজ এন্টারপ্রাইজ',
+    desc_en: 'Unlimited workstations with complete hardware.',
+    desc_bn: 'সব হার্ডওয়্যার সহ আনলিমিটেড কম্পিউটার সেটআপ।',
+    price: 150000,
+    timeline: '10-15 Days',
+    features_en: ['Custom Server', 'Advanced Security', 'All Hardware Included', 'Lifetime Warranty'],
+    features_bn: ['কাস্টম সার্ভার', 'অ্যাডভান্সড সিকিউরিটি', 'সব হার্ডওয়্যার', 'লাইফটাইম ওয়ারেন্টি'],
+    type: 'pos',
+    category: 'Full Setup',
+    tier: 'Enterprise'
+  },
+
+  // --- MOBILE APPS ---
+  {
+    id: 'app-starter',
+    name_en: 'Mobile App Starter',
+    name_bn: 'মোবাইল অ্যাপ স্টার্টার',
+    desc_en: 'Hybrid app for basic business presence.',
+    desc_bn: 'বেসিক ব্যবসার জন্য হাইব্রিড মোবাইল অ্যাপ।',
+    price: 45000,
+    timeline: '30 Days',
+    features_en: ['iOS/Android Support', 'Push Notifications', 'Splash Screen', 'Admin Panel'],
+    features_bn: ['আইওএস/অ্যান্ড্রয়েড', 'পুশ নোটিফিকেশন', 'স্প্ল্যাশ স্ক্রিন', 'অ্যাডমিন প্যানেল'],
     type: 'app',
-    details_en: 'Next-gen mobile applications built with React Native or Flutter. We ensure 60fps performance and native-like experiences on both platforms.',
-    details_bn: 'নেক্সট-জেন মোবাইল অ্যাপ যা রিঅ্যাক্ট নেটিভ বা ফ্লাটার দিয়ে তৈরি। আমরা উভয় প্ল্যাটফর্মে সর্বোচ্চ পারফরম্যান্স নিশ্চিত করি।',
-    features_bn: ['প্লে-স্টোর পাবলিশিং', 'পুশ নোটিফিকেশন', 'অফলাইন ডেটা সাপোর্ট', 'অ্যাডমিন প্যানেল', 'রিয়েল-টাইম ডেটাবেস', '৬ মাসের ফ্রি সাপোর্ট'],
-    features_en: ['Play Store Publishing', 'Push Notifications', 'Offline Data Support', 'Admin Control Panel', 'Real-time Database', '6 Months Free Support']
+    tier: 'Starter'
   },
   {
-    id: 'sv-erp-factory',
-    name_bn: 'ফ্যাক্টরি ও ইআরপি (ERP) সলিউশন',
-    name_en: 'Factory & ERP Solution',
-    desc_bn: 'বড় ফ্যাক্টরি বা গার্মেন্টস এর জন্য পূর্ণাঙ্গ অটোমেশন সফটওয়্যার।',
-    desc_en: 'Full automation software for large factories or garments.',
-    extended_desc_en: 'Comprehensive enterprise-grade system integrating supply chain, factory operations, and centralized accounting.',
-    extended_desc_bn: 'সাপ্লাই চেইন, ফ্যাক্টরি অপারেশন এবং সেন্ট্রালাইজড অ্যাকাউন্টিং সংহত করে পূর্ণাঙ্গ এন্টারপ্রাইজ-গ্রেড সিস্টেম।',
+    id: 'app-pro',
+    name_en: 'Business Pro App',
+    name_bn: 'বিজনেস প্রো অ্যাপ',
+    desc_en: 'High-performance cross-platform app.',
+    desc_bn: 'উচ্চ পারফরম্যান্স ক্রস-প্ল্যাটফর্ম অ্যাপ।',
+    price: 120000,
+    timeline: '60 Days',
+    features_en: ['Real-time Sync', 'Payment Gateway', 'Member Login', 'Cloud Backend'],
+    features_bn: ['রিয়েল-টাইম সিঙ্ক', 'পেমেন্ট গেটওয়ে', 'মেম্বার লগইন', 'ক্লাউড ব্যাকএন্ড'],
+    type: 'app',
+    tier: 'Pro'
+  },
+  {
+    id: 'app-ent',
+    name_en: 'Enterprise Custom App',
+    name_bn: 'এন্টারপ্রাইজ কাস্টম অ্যাপ',
+    desc_en: 'Scalable solution for major organizations.',
+    desc_bn: 'বড় প্রতিষ্ঠানের জন্য স্কেলেবল অ্যাপ সলিউশন।',
     price: 250000,
-    timeline_bn: '৪-৬ মাস',
-    timeline_en: '4-6 Months',
-    type: 'enterprise',
-    details_en: 'A comprehensive enterprise resource planning system. Integrates IoT monitoring for real-time factory floor data and automated HR/Payroll.',
-    details_bn: 'একটি পূর্ণাঙ্গ এন্টারপ্রাইজ রিসোর্স প্ল্যানিং সিস্টেম। এটি ফ্যাক্টরির রিয়েল-টাইম ডেটা এবং অটোমেটেড এইচআর/পেরোল পরিচালনা করে।',
-    features_bn: ['প্রোডাকশন ট্র্যাকিং', 'এইচআর ও পেরোল', 'অ্যাকাউন্টস ও লেজার', 'আইওটি (IoT) সেন্সর সাপোর্ট', 'ক্লাউড ব্যাকআপ সিস্টেম', 'ডেডিকেটেড সাপোর্ট টিম'],
-    features_en: ['Production Tracking', 'HR & Payroll', 'Accounts & Ledger', 'IoT Sensor Support', 'Cloud Backup System', 'Dedicated Support Team']
+    timeline: '90+ Days',
+    features_en: ['Native Performance', 'Big Data Support', 'A/B Testing', 'Maintenance Plan'],
+    features_bn: ['নেটিভ পারফরম্যান্স', 'বিগ ডেটা সাপোর্ট', 'এ/বি টেস্টিং', 'মেইনটেন্যান্স প্ল্যান'],
+    type: 'app',
+    tier: 'Enterprise'
   }
 ];
 
 export const MOCK_HARDWARE: any[] = [
   {
     id: 'hw-bd-1',
-    name_bn: 'নেক্সাস স্মার্ট পজ হাব',
-    name_en: 'Nexus Smart POS Hub',
+    name_bn: 'আরএনএ স্মার্ট পজ হাব',
+    name_en: 'RNA Smart POS Hub',
     desc_bn: 'ঢাকার ছোট এবং বড় দোকানের জন্য বিশেষ ইনভেন্টরি ও সেলস ম্যানেজমেন্ট সিস্টেম।',
     desc_en: 'Specialized inventory and sales management system for small and large shops in Dhaka.',
     price: 35000,
@@ -227,15 +552,15 @@ export const MOCK_HARDWARE: any[] = [
   },
   {
     id: 'hw-bd-2',
-    name_bn: 'নেক্সাস আইওটি গেটওয়ে',
-    name_en: 'Nexus IoT Gateway',
+    name_bn: 'আরএনএ আইওটি গেটওয়ে',
+    name_en: 'RNA IoT Gateway',
     desc_bn: 'গার্মেন্টস এবং ফ্যাক্টরির জন্য রিয়েল-টাইম মেশিন মনিটরিং সেন্সর।',
     desc_en: 'Real-time machine monitoring sensor for garments and factories.',
     price: 125000,
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
     category: 'Industrial',
     stock: 12,
-    specs: { endurance: '24/7 Runtime', protection: 'IP65 Rated', cloud: 'Azure/Nexus Managed' },
+    specs: { endurance: '24/7 Runtime', protection: 'IP65 Rated', cloud: 'Azure/RNA Managed' },
     warranty: '২ বছরের রিপ্লেমেন্ট গ্যারান্টি',
     tag: 'Enterprise'
   },

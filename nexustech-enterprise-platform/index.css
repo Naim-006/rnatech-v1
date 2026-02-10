@@ -1,2 +1,14 @@
-/* Main styles for RNATECH platform */
-/* Using Tailwind CDN via index.html */
+/* Global styles - Styles are primarily managed via Tailwind CDN and index.html styles */
+
+/* Hide scrollbar but maintain scroll functionality */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}

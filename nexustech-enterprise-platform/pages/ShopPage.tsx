@@ -5,102 +5,151 @@ import { MOCK_HARDWARE, ICONS } from '../constants';
 import { useApp } from '../App';
 
 const ShopPage = () => {
-  const { lang, theme, addToCart } = useApp();
+  const { lang, theme, addToCart, t } = useApp();
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = ['All', 'Retail Systems', 'Industrial', 'Sensors'];
   const filtered = activeCategory === 'All' ? MOCK_HARDWARE : MOCK_HARDWARE.filter(p => p.category === activeCategory);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-24 relative">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20 md:mb-32">
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-center lg:text-left">
-          <h2 className={`text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tight transition-colors ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
-            {lang === 'bn' ? 'হার্ডওয়্যার শপ' : 'Nexus IoT'}<br />
-            <span className="text-gradient animate-gradient">Hardware Hub</span>
-          </h2>
-          <p className="text-slate-500 text-lg md:text-xl font-medium max-w-xl mx-auto lg:mx-0">
-            Industrial-grade sensors, POS equipment, and automation hardware for scale.
-          </p>
-        </motion.div>
-
-        <div className={`flex flex-wrap items-center justify-center gap-2 md:gap-3 p-2 md:p-3 rounded-3xl md:rounded-[2.5rem] border transition-all
-          ${theme === 'dark' ? 'bg-slate-900/60 border-white/5 shadow-inner' : 'bg-slate-100 border-slate-200'}`}>
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 md:px-8 py-2 md:py-3 rounded-2xl text-[9px] md:text-[10px] font-bold uppercase tracking-widest transition-all
-                ${activeCategory === cat ? 'bg-brand-600 text-white shadow-2xl shadow-brand-600/30' : 'text-slate-500 hover:text-brand-500'}`}
-            >
-              {cat}
-            </button>
-          ))}
+    <div className="min-h-screen">
+      {/* Shop Hero */}
+      <section className={`relative py-20 px-6 overflow-hidden border-b transition-colors
+        ${theme === 'dark' ? 'bg-slate-950 border-white/5' : 'bg-slate-50 border-slate-200'}`}>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <div className="inline-block px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-[9px] font-black uppercase tracking-[0.3em] mb-6">
+              {t('shop_hero_badge')}
+            </div>
+            <h1 className={`text-5xl md:text-7xl font-black mb-6 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              {t('shop_title_1')}<br />
+              <span className="text-gradient animate-gradient">{t('shop_title_2')}</span>
+            </h1>
+            <p className="text-slate-500 text-lg md:text-xl max-w-2xl font-medium leading-relaxed">
+              {t('shop_desc')}
+            </p>
+          </motion.div>
         </div>
-      </div>
 
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-40">
-        <AnimatePresence mode="popLayout">
-          {filtered.map((product, idx) => (
-            <motion.div
-              key={product.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ delay: idx * 0.05 }}
-              className={`group rounded-3xl md:rounded-[4.5rem] border overflow-hidden transition-all shadow-3xl smooth-animate flex flex-col
-                ${theme === 'dark' ? 'bg-slate-900/50 border-white/5 hover:border-brand-500/40' : 'bg-white border-slate-200 shadow-slate-200/50 hover:shadow-3xl'}`}
-            >
-              <div className="aspect-[5/4] relative overflow-hidden md:group-hover:p-4 transition-all duration-700">
-                <img src={product.image} alt={product.name_en} className="w-full h-full object-cover rounded-t-3xl md:rounded-t-[4rem] md:group-hover:rounded-[3.5rem] transition-all duration-700 smooth-animate" />
-                <div className="absolute top-10 left-10 flex flex-col gap-3">
-                  <div className="bg-slate-950/80 glass px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
-                    {product.category}
+        {/* Decorative background */}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500 blur-[150px] rounded-full"></div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Category & Stats bar */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 px-4">
+          <div className={`flex flex-wrap gap-2 p-2 rounded-2xl border transition-all
+            ${theme === 'dark' ? 'bg-white/5 border-white/10' : 'bg-white border-slate-200 shadow-sm'}`}>
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all
+                  ${activeCategory === cat
+                    ? 'bg-brand-600 text-white shadow-lg shadow-brand-600/30'
+                    : 'text-slate-500 hover:text-brand-500'}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-10">
+            <div className="text-center">
+              <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">{t('shop_stat_items')}</span>
+              <span className="text-2xl font-black tracking-tight">{filtered.length}</span>
+            </div>
+            <div className="w-px h-10 bg-slate-500/20"></div>
+            <div className="text-center">
+              <span className="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">{t('shop_stat_standard')}</span>
+              <span className="text-2xl font-black tracking-tight">Global QC</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((product, idx) => (
+              <motion.div
+                key={product.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ delay: idx * 0.05 }}
+                className={`group relative rounded-[2.5rem] p-4 border transition-all duration-500 flex flex-col
+                  ${theme === 'dark' ? 'bg-slate-900/40 border-white/5 hover:border-brand-500/30' : 'bg-white border-slate-200 shadow-xl shadow-slate-200/40 hover:shadow-3xl'}`}
+              >
+                {/* Image Container */}
+                <div className="aspect-[4/3] relative overflow-hidden rounded-[2rem] mb-8">
+                  <img
+                    src={product.image}
+                    alt={product.name_en}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Overlay Badges */}
+                  <div className="absolute top-6 left-6 flex flex-col gap-2">
+                    <div className="glass px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-white border border-white/10">
+                      {product.category}
+                    </div>
+                    {product.tag && (
+                      <div className="bg-brand-600 px-4 py-1.5 rounded-full text-[8px] font-black uppercase tracking-widest text-white shadow-lg">
+                        {product.tag}
+                      </div>
+                    )}
                   </div>
-                  {product.tag && (
-                    <div className="bg-brand-600 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-xl">
-                      {product.tag}
+
+                  <div className="absolute bottom-6 right-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <button className="w-12 h-12 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-2xl hover:bg-brand-500 hover:text-white transition-colors">
+                      <ICONS.Search />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="px-4 pb-4 flex-grow flex flex-col">
+                  <div className="flex justify-between items-start gap-4 mb-4">
+                    <h3 className="text-2xl font-black tracking-tight leading-tight group-hover:text-brand-500 transition-colors">
+                      {lang === 'bn' ? product.name_bn : product.name_en}
+                    </h3>
+                    <div className="text-xl font-black text-brand-500">
+                      ৳{product.price.toLocaleString()}
                     </div>
-                  )}
+                  </div>
+
+                  <p className="text-slate-500 text-sm font-medium leading-relaxed mb-8 line-clamp-2">
+                    {lang === 'bn' ? product.desc_bn : product.desc_en}
+                  </p>
+
+                  <div className={`grid grid-cols-2 gap-4 mb-10 p-5 rounded-2xl border transition-colors
+                    ${theme === 'dark' ? 'bg-white/5 border-white/5' : 'bg-slate-50 border-slate-100'}`}>
+                    {Object.entries(product.specs).slice(0, 2).map(([key, val]: [string, any]) => (
+                      <div key={key}>
+                        <span className="block text-[9px] text-slate-500 uppercase font-black tracking-widest mb-1">{key}</span>
+                        <span className="text-xs font-bold truncate block">{val}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => addToCart({ product, quantity: 1 })}
+                    className="w-full py-5 rounded-2xl bg-slate-900 hover:bg-brand-600 text-white font-black text-[11px] tracking-[0.2em] uppercase flex items-center justify-center gap-4 transition-all shadow-xl active:scale-95"
+                  >
+                    <ICONS.ShoppingCart /> {t('shop_add_to_cart')}
+                  </button>
                 </div>
-              </div>
-
-              <div className="p-8 md:p-12 pt-6 md:pt-8 flex-grow flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className={`text-xl md:text-2xl font-black transition-colors ${theme === 'dark' ? 'text-white hover:text-brand-500' : 'text-slate-900 hover:text-brand-600'}`}>
-                    {lang === 'bn' ? product.name_bn : product.name_en}
-                  </h3>
-                  <div className={`text-lg md:text-xl font-black ${theme === 'dark' ? 'text-brand-400' : 'text-brand-600'}`}>৳{product.price.toLocaleString()}</div>
-                </div>
-
-                <p className="text-slate-500 text-sm md:text-lg leading-relaxed mb-8 md:mb-10 flex-grow">
-                  {lang === 'bn' ? product.desc_bn : product.desc_en}
-                </p>
-
-                <div className={`grid grid-cols-2 gap-4 mb-8 md:mb-12 p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] border transition-colors
-                  ${theme === 'dark' ? 'bg-slate-950/60 border-white/5' : 'bg-slate-50 border-slate-100'}`}>
-                  {Object.entries(product.specs).slice(0, 2).map(([key, val]: [string, any]) => (
-                    <div key={key}>
-                      <span className="block text-[10px] text-slate-500 uppercase font-black tracking-widest mb-1">{key}</span>
-                      <span className={`text-xs font-bold ${theme === 'dark' ? 'text-slate-300' : 'text-slate-700'}`}>{val}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => addToCart({ product, quantity: 1 })}
-                  className="w-full py-4 md:py-6 rounded-2xl md:rounded-[2rem] bg-brand-600 hover:bg-brand-500 text-white font-black text-[11px] md:text-[13px] tracking-[0.2em] uppercase flex items-center justify-center gap-4 transition-all shadow-2xl shadow-brand-600/30 active:scale-95"
-                >
-                  <ICONS.ShoppingCart /> {lang === 'bn' ? 'কার্টে যোগ করুন' : 'Add to Cart'}
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
 export default ShopPage;
+

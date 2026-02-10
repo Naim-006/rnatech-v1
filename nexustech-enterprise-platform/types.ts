@@ -19,12 +19,17 @@ export type Product = {
 
 export type ServicePackage = {
   id: string;
-  name: string;
-  description: string;
+  name_en: string;
+  name_bn: string;
+  description_en: string;
+  description_bn: string;
   price: number;
   timeline: string;
-  features: string[];
-  type: 'website' | 'app' | 'enterprise';
+  features_en: string[];
+  features_bn: string[];
+  type: 'website' | 'app' | 'pos';
+  category?: string;
+  tier?: 'Beginner' | 'Standard' | 'Enterprise' | '2 PC' | '4 PC' | '8 PC' | 'Staff' | 'Pro' | 'Starter';
 };
 
 export type Order = {

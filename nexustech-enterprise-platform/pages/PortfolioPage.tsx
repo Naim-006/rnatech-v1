@@ -1,5 +1,5 @@
 
-import * as React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const PortfolioPage = () => {
@@ -14,10 +14,10 @@ const PortfolioPage = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-center mb-12 md:mb-16"
+        className="text-center mb-16"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-4 md:mb-6 leading-tight tracking-tight">সফল প্রোজেক্টসমূহ</h1>
-        <p className="text-lg md:text-xl font-medium text-slate-400">আমাদের ক্লায়েন্টদের সফলতার গল্প</p>
+        <h1 className="text-5xl font-black mb-4">সফল প্রোজেক্টসমূহ</h1>
+        <p className="text-slate-400 text-lg">আমাদের ক্লায়েন্টদের সফলতার গল্প</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -35,13 +35,13 @@ const PortfolioPage = () => {
               alt={project.title}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60"
             />
-            <div className="absolute bottom-0 left-0 p-6 md:p-8 z-20 w-full">
-              <span className="px-3 py-1 rounded-full bg-brand-500 text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-3 md:mb-4 inline-block">
+            <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
+              <span className="px-3 py-1 rounded-full bg-brand-500 text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">
                 {project.industry}
               </span>
-              <h3 className="text-xl md:text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="text-slate-400 text-xs md:text-sm mb-4">Client: {project.client}</p>
-              <div className="flex items-center justify-between text-[10px] md:text-xs font-bold text-slate-500 border-t border-white/10 pt-4">
+              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+              <p className="text-slate-400 text-sm mb-4">Client: {project.client}</p>
+              <div className="flex items-center justify-between text-xs font-bold text-slate-500 border-t border-white/10 pt-4">
                 <span>Completed: {project.year}</span>
                 <button className="text-brand-500 hover:text-white transition-colors">Case Study →</button>
               </div>

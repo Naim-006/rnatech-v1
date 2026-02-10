@@ -41,8 +41,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
                     className="relative mb-8"
                 >
                     <img
-                        src="/logo-transparent.png"
-                        alt="NexusTech"
+                        src="/logo.png"
+                        alt="RNATECH"
                         className="w-32 h-32 object-contain"
                     />
 
