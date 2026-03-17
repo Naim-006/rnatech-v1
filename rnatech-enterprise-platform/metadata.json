@@ -1,0 +1,8 @@
+{
+  "name": "NexusTech Enterprise Platform",
+  "description": "A high-performance enterprise SaaS platform for Web/App development services and Hardware/IoT sales, featuring a full administrative suite and customer dashboard.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
