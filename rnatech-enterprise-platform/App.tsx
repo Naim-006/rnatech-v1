@@ -158,12 +158,26 @@ const Header = () => {
             </Link>
           )}
 
-          <button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className={`p-3 rounded-xl transition-all lg:hidden ${theme === 'dark' ? 'bg-white/5 text-brand-500 border border-white/10' : 'bg-slate-100 text-slate-900'}`}
-          >
-            <ICONS.Menu className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <Link
+              to="/checkout"
+              className={`relative p-3 rounded-xl transition-all ${theme === 'dark' ? 'bg-white/5 text-white hover:bg-white/10' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}
+            >
+              <ICONS.ShoppingCart className="w-5 h-5" />
+              {state.cart.length > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 bg-brand-500 text-[9px] font-black flex items-center justify-center px-1 rounded-full text-white ring-2 ring-slate-950 shadow-lg animate-pulse">
+                  {state.cart.reduce((acc, c) => acc + c.quantity, 0)}
+                </span>
+              )}
+            </Link>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className={`p-3 rounded-xl transition-all ${theme === 'dark' ? 'bg-white/5 text-brand-500 border border-white/10' : 'bg-slate-100 text-slate-900 border border-slate-200'}`}
+            >
+              <ICONS.Menu className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
 
