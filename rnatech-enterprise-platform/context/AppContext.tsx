@@ -23,8 +23,8 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [lang, setLang] = useState<'bn' | 'en'>('en');
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  const [lang, setLang] = useState<'bn' | 'en'>('bn');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [systemSettings, setSystemSettings] = useState<any>(null);
   const [state, setState] = useState<AppState>({
