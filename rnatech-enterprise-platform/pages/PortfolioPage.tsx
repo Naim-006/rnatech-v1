@@ -38,22 +38,22 @@ const PortfolioPage = () => {
           <div className={`absolute bottom-0 left-0 w-[600px] h-[600px] blur-[150px] opacity-10 rounded-full ${theme === 'dark' ? 'bg-cyan-500' : 'bg-cyan-300'}`} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-24"
+          className="text-center mb-16 md:mb-24"
         >
           <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-[10px] font-black mb-6 tracking-widest uppercase
             ${theme === 'dark' ? 'bg-brand-500/10 border-brand-500/20 text-brand-500' : 'bg-brand-50 border-brand-100 text-brand-600'}`}>
             <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
             Showcase
           </div>
-          <h1 className={`text-5xl md:text-7xl font-black mb-6 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('portfolio_title')}</h1>
-          <p className="text-slate-500 text-xl font-medium max-w-2xl mx-auto leading-relaxed">{t('portfolio_desc')}</p>
+          <h1 className={`fluid-text-title font-black mb-6 tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{t('portfolio_title')}</h1>
+          <p className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">{t('portfolio_desc')}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
@@ -80,11 +80,11 @@ const PortfolioPage = () => {
                 </div>
               </div>
 
-              <div className="p-8">
-                <h3 className={`text-2xl font-black mb-3 group-hover:text-brand-500 transition-colors tracking-tight uppercase ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              <div className="p-6 md:p-8">
+                <h3 className={`text-xl md:text-2xl font-black mb-3 group-hover:text-brand-500 transition-colors tracking-tight uppercase ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                   {project.title}
                 </h3>
-                <p className="text-slate-500 text-xs font-bold mb-6 line-clamp-2 leading-relaxed">
+                <p className="text-slate-500 text-[10px] md:text-xs font-bold mb-6 line-clamp-2 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -100,10 +100,10 @@ const PortfolioPage = () => {
                   )}
                 </div>
 
-                <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                <div className="flex items-center justify-between pt-5 md:pt-6 border-t border-white/5">
                    <div className="flex flex-col">
-                      <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_client')}</span>
-                      <span className="text-xs font-black text-brand-500">{project.client_name || 'Global Enterprise'}</span>
+                      <span className="text-[8px] md:text-[9px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_client')}</span>
+                      <span className="text-[10px] md:text-xs font-black text-brand-500">{project.client_name || 'Global Enterprise'}</span>
                    </div>
                    <ICONS.ChevronRight className="w-5 h-5 text-slate-700 group-hover:text-brand-500 group-hover:translate-x-2 transition-all" />
                 </div>
@@ -113,7 +113,7 @@ const PortfolioPage = () => {
         </div>
       </div>
 
-      {/* Project Detail Modal */}
+      {/* Project Detail Modal - Responsive Refined */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -127,31 +127,31 @@ const PortfolioPage = () => {
               initial={{ scale: 0.9, y: 40 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 40 }}
-              className={`relative w-full max-w-6xl max-h-full overflow-y-auto custom-scrollbar rounded-[3rem] border shadow-3xl
+              className={`relative responsive-modal-container !p-0 overflow-hidden border shadow-3xl
                 ${theme === 'dark' ? 'bg-slate-900 border-white/10' : 'bg-white border-slate-200'}`}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-8 right-8 z-[110] w-12 h-12 rounded-2xl bg-black/50 text-white flex items-center justify-center hover:bg-rose-500 transition-all border border-white/10"
+                className="absolute top-4 right-4 md:top-8 md:right-8 z-[110] w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-rose-500 transition-all border border-white/10"
               >
-                <ICONS.X className="w-6 h-6" />
+                <ICONS.X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
                 {/* Media Gallery */}
-                <div className="p-8 lg:p-12 space-y-6">
-                   <div className="aspect-video rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+                <div className="p-6 md:p-12 space-y-4 md:space-y-6 border-b lg:border-b-0 lg:border-r border-white/5 bg-slate-950/20">
+                   <div className="aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
                       <img 
                         src={selectedProject.images?.[0] || 'https://placehold.co/1200x800'} 
                         className="w-full h-full object-cover" 
                         alt={selectedProject.title}
                       />
                    </div>
-                   <div className="grid grid-cols-3 gap-6">
+                   <div className="grid grid-cols-3 gap-3 md:gap-6">
                       {selectedProject.images?.slice(1, 4).map((img: string, idx: number) => (
-                        <div key={idx} className="aspect-video rounded-2xl overflow-hidden border border-white/5 hover:border-brand-500/50 transition-all cursor-pointer">
+                        <div key={idx} className="aspect-video rounded-xl md:rounded-2xl overflow-hidden border border-white/5 hover:border-brand-500/50 transition-all cursor-pointer">
                            <img src={img} className="w-full h-full object-cover" />
                         </div>
                       ))}
@@ -159,37 +159,37 @@ const PortfolioPage = () => {
                 </div>
 
                 {/* Content Details */}
-                <div className="p-8 lg:p-12 lg:pl-0">
-                   <div className="mb-12">
-                      <span className="px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/40 text-[10px] font-black text-brand-500 uppercase tracking-[0.2em] mb-6 inline-block">
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                   <div className="mb-8 md:mb-12">
+                      <span className="px-3 py-1 rounded-full bg-brand-500/20 border border-brand-500/40 text-[9px] font-black text-brand-500 uppercase tracking-[0.2em] mb-4 md:mb-6 inline-block w-fit">
                         {selectedProject.category}
                       </span>
-                      <h2 className={`text-4xl md:text-5xl font-black mb-6 tracking-tighter uppercase ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                      <h2 className={`text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 tracking-tighter uppercase ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                         {selectedProject.title}
                       </h2>
-                      <p className="text-slate-500 text-lg leading-relaxed font-medium">
+                      <p className="text-slate-500 text-sm md:text-lg leading-relaxed font-medium">
                         {selectedProject.description}
                       </p>
                    </div>
 
-                   <div className="grid grid-cols-2 gap-8 mb-12">
-                      <div className="space-y-2">
-                         <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_client')}</h4>
-                         <p className={`font-black text-lg ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{selectedProject.client_name || 'Confidential'}</p>
+                   <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+                      <div className="space-y-1 md:space-y-2">
+                         <h4 className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_client')}</h4>
+                         <p className={`font-black text-sm md:text-lg ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{selectedProject.client_name || 'Confidential'}</p>
                       </div>
-                      <div className="space-y-2">
-                         <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_completed')}</h4>
-                         <p className={`font-black text-lg ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                      <div className="space-y-1 md:space-y-2">
+                         <h4 className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_completed')}</h4>
+                         <p className={`font-black text-sm md:text-lg ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                            {selectedProject.completion_date ? new Date(selectedProject.completion_date).toLocaleDateString(lang === 'bn' ? 'bn-BD' : 'en-US', { year: 'numeric', month: 'long' }) : '2024'}
                          </p>
                       </div>
                    </div>
 
-                   <div className="space-y-4 mb-12">
-                      <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_tech_stack')}</h4>
-                      <div className="flex flex-wrap gap-3">
+                   <div className="space-y-3 md:space-y-4 mb-10 md:mb-12">
+                      <h4 className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{t('portfolio_tech_stack')}</h4>
+                      <div className="flex flex-wrap gap-2 md:gap-3">
                          {selectedProject.tech_stack?.map((tech: string, idx: number) => (
-                            <span key={idx} className={`px-4 py-2 rounded-xl text-xs font-black border transition-colors
+                            <span key={idx} className={`px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl text-[9px] md:text-xs font-black border transition-colors
                               ${theme === 'dark' ? 'bg-white/5 border-white/10 text-slate-300' : 'bg-slate-100 border-slate-200 text-slate-700'}`}>
                                {tech}
                             </span>
@@ -202,9 +202,9 @@ const PortfolioPage = () => {
                        href={selectedProject.project_url} 
                        target="_blank" 
                        rel="noopener noreferrer"
-                       className="w-full py-5 bg-brand-600 hover:bg-brand-500 text-white rounded-2xl flex items-center justify-center gap-4 text-sm font-black uppercase tracking-widest transition-all shadow-2xl shadow-brand-600/30 hover:-translate-y-1"
+                       className="w-full py-4 md:py-5 bg-brand-600 hover:bg-brand-500 text-white rounded-2xl flex items-center justify-center gap-3 md:gap-4 text-xs md:text-sm font-black uppercase tracking-widest transition-all shadow-2xl shadow-brand-600/30 hover:-translate-y-1"
                      >
-                       Launch Live Project <ICONS.Globe className="w-5 h-5" />
+                       Launch Live Project <ICONS.Globe className="w-4 h-4 md:w-5 md:h-5" />
                      </a>
                    )}
                 </div>

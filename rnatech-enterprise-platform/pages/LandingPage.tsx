@@ -65,7 +65,7 @@ const LandingPage = () => {
 
           <motion.h1
             variants={item}
-            className={`text-4xl sm:text-6xl md:text-[8rem] font-black mb-6 leading-[0.9] tracking-tighter transition-colors select-none
+            className={`fluid-text-hero font-black mb-10 transition-colors select-none
               ${theme === 'dark' ? 'text-white' : 'text-slate-950'}`}
           >
             {t('hero_title_1')} <br />

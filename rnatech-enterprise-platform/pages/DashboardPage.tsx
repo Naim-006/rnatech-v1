@@ -176,10 +176,10 @@ const DashboardPage = () => {
             
             <div className="text-center md:text-left flex-grow space-y-4">
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">
+                <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase">
                     {profile.full_name || 'RNA Agent'}
                 </h1>
-                <span className={`w-fit px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[0.2em] border shadow-sm ${
+                <span className={`w-fit px-4 py-1.5 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-[0.2em] border shadow-sm ${
                     authProfile?.role === 'ADMIN' ? 'bg-rose-500/10 text-rose-500 border-rose-500/20' : 'bg-brand-500/10 text-brand-500 border-brand-500/20'
                 }`}>
                     {authProfile?.role || 'CLIENT'} PROTOCOL
@@ -217,23 +217,23 @@ const DashboardPage = () => {
         </motion.div>
 
         {/* Navigation Tabs - Modern Segmented Control */}
-        <div className="flex gap-2 mb-16 p-2 bg-white/5 border border-white/10 rounded-[2.5rem] w-fit mx-auto md:mx-0 overflow-x-auto custom-scrollbar">
+        <div className="flex gap-2 mb-12 md:mb-16 p-2 bg-white/5 border border-white/10 rounded-[2rem] md:rounded-[2.5rem] w-full md:w-fit overflow-x-auto custom-scrollbar no-scrollbar-mobile">
           {[
-            { id: 'overview', label: 'System Overview', icon: ICONS.Layout },
-            { id: 'orders', label: 'Hardware Archive', icon: ICONS.Box },
-            { id: 'projects', label: 'Project Pipeline', icon: ICONS.Cpu },
-            { id: 'address', label: 'Address Book', icon: ICONS.MapPin },
-            { id: 'settings', label: 'Secure Config', icon: ICONS.Settings }
+            { id: 'overview', label: 'Overview', icon: ICONS.Layout },
+            { id: 'orders', label: 'Orders', icon: ICONS.Box },
+            { id: 'projects', label: 'Projects', icon: ICONS.Cpu },
+            { id: 'address', label: 'Address', icon: ICONS.MapPin },
+            { id: 'settings', label: 'Settings', icon: ICONS.Settings }
           ].map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-3 px-8 py-4 rounded-[1.8rem] text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap
+              className={`flex items-center gap-2 md:gap-3 px-6 md:px-8 py-3 md:py-4 rounded-[1.5rem] md:rounded-[1.8rem] text-[9px] md:text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap
                 ${activeTab === tab.id 
                   ? 'bg-brand-600 text-white shadow-[0_0_30px_rgba(59,130,246,0.3)] scale-105' 
                   : 'text-slate-500 hover:text-white hover:bg-white/5'}`}
             >
-              <tab.icon className="w-4 h-4" />
+              <tab.icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
               {tab.label}
             </button>
           ))}
@@ -310,7 +310,7 @@ const DashboardPage = () => {
                         <h4 className="text-xl font-black uppercase tracking-tight">Mission Control</h4>
                         <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Rapid Deployment Hub</span>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/5">
+                    <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/5">
                         <Link to="/services" className="p-10 flex flex-col items-center gap-4 hover:bg-brand-500/5 transition-all group">
                             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-500 group-hover:bg-brand-500 group-hover:text-white transition-all shadow-inner">
                                 <ICONS.Zap className="w-5 h-5" />
@@ -641,7 +641,7 @@ const DashboardPage = () => {
                         initial={{ scale: 0.9, opacity: 0, y: 20 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                        className="relative w-full max-w-xl premium-card !p-12 border border-white/10 shadow-4xl overflow-hidden"
+                        className="relative responsive-modal-container max-w-xl !p-8 md:!p-12 overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                         

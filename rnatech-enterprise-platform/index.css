@@ -45,19 +45,31 @@ h1, h2, h3, h4, h5, h6 {
 .text-gradient {
     background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.premium-card {
-    @apply rounded-[2.5rem] p-8 transition-all duration-500;
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    box-shadow: var(--shadow-premium);
+/* Premium Responsive Utilities */
+.fluid-text-hero {
+    font-size: clamp(2.5rem, 15vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
 }
 
-.premium-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--brand-500);
+.fluid-text-title {
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.responsive-modal-container {
+    @apply w-full max-w-full md:max-w-6xl max-h-[95vh] overflow-y-auto rounded-[2rem] md:rounded-[3rem] p-6 md:p-12;
+}
+
+@media (max-width: 768px) {
+    .premium-card {
+        @apply p-6 rounded-[2rem];
+    }
 }
 
 /* Hide scrollbar but maintain scroll functionality */

@@ -3,7 +3,7 @@ import React from 'react';
 
 export const ICONS = {
   Logo: ({ theme, className }: { theme: 'dark' | 'light'; className?: string }) => (
-    <img src={theme === 'dark' ? "/logo-dark.png" : "/logo-transparent.png"} alt="RNATECH Logo" className={`w-10 h-10 object-contain ${className || ''}`} />
+    <img src={theme === 'dark' ? "/logo-transparent.png" : "/logo-transparent.png"} alt="RNATECH Logo" className={`w-10 h-10 object-contain ${className || ''}`} />
   ),
   ShoppingCart: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 ${className || ''}`}>
@@ -158,35 +158,35 @@ export const ICONS = {
   // Payment Provider Icons
   BkashLogo: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 48 48" className={`w-10 h-10 ${className || ''}`}>
-      <rect width="48" height="48" rx="12" fill="#E2136E"/>
+      <rect width="48" height="48" rx="12" fill="#E2136E" />
       <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="900" fontSize="11" fontFamily="Arial, sans-serif">bKash</text>
     </svg>
   ),
   NagadLogo: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 48 48" className={`w-10 h-10 ${className || ''}`}>
-      <rect width="48" height="48" rx="12" fill="#F6921E"/>
+      <rect width="48" height="48" rx="12" fill="#F6921E" />
       <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="900" fontSize="10" fontFamily="Arial, sans-serif">নগদ</text>
     </svg>
   ),
   RocketLogo: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 48 48" className={`w-10 h-10 ${className || ''}`}>
-      <rect width="48" height="48" rx="12" fill="#8C3494"/>
+      <rect width="48" height="48" rx="12" fill="#8C3494" />
       <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="900" fontSize="9" fontFamily="Arial, sans-serif">Rocket</text>
     </svg>
   ),
   SSLCommerzLogo: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 48 48" className={`w-10 h-10 ${className || ''}`}>
-      <rect width="48" height="48" rx="12" fill="#1F4B99"/>
-      <path d="M15 18 L24 14 L33 18 L33 26 C33 30 29 34 24 36 C19 34 15 30 15 26Z" fill="none" stroke="white" strokeWidth="1.5"/>
-      <path d="M20 24 L23 27 L29 21" fill="none" stroke="#4ADE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect width="48" height="48" rx="12" fill="#1F4B99" />
+      <path d="M15 18 L24 14 L33 18 L33 26 C33 30 29 34 24 36 C19 34 15 30 15 26Z" fill="none" stroke="white" strokeWidth="1.5" />
+      <path d="M20 24 L23 27 L29 21" fill="none" stroke="#4ADE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       <text x="50%" y="90%" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="900" fontSize="5" fontFamily="Arial, sans-serif">SSLCOMMERZ</text>
     </svg>
   ),
   CashOnDelivery: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 48 48" className={`w-10 h-10 ${className || ''}`}>
-      <rect width="48" height="48" rx="12" fill="#059669"/>
-      <rect x="10" y="14" width="28" height="20" rx="3" fill="none" stroke="white" strokeWidth="1.5"/>
-      <circle cx="24" cy="24" r="5" fill="none" stroke="white" strokeWidth="1.5"/>
+      <rect width="48" height="48" rx="12" fill="#059669" />
+      <rect x="10" y="14" width="28" height="20" rx="3" fill="none" stroke="white" strokeWidth="1.5" />
+      <circle cx="24" cy="24" r="5" fill="none" stroke="white" strokeWidth="1.5" />
       <text x="24" y="26" dominantBaseline="middle" textAnchor="middle" fill="white" fontWeight="900" fontSize="7" fontFamily="Arial, sans-serif">৳</text>
     </svg>
   )

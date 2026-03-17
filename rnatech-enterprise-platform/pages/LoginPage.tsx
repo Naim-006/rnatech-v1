@@ -24,44 +24,56 @@ const LoginPage = () => {
             const { user } = await signIn(email, password);
 
             if (user) {
-                let actualRole: UserRole | null = null;
-                setLoading(true);
-
-                try {
-                    if (role === UserRole.ADMIN) {
-                        const { data: adminData } = await supabase
-                            .from('admins')
-                            .select('id')
-                            .eq('id', user.id)
-                            .maybeSingle();
-                        if (adminData) actualRole = UserRole.ADMIN;
-                    } else {
+                // Wait a moment for AuthContext to fetch the profile
+                // This prevents race conditions where navigate happens before profile is loaded
+                let attempts = 0;
+                const checkProfile = async () => {
+                    if (attempts > 5) {
+                        // Fallback: manually fetch if AuthContext is too slow
                         const { data: profileData } = await supabase
                             .from('profiles')
                             .select('id')
                             .eq('id', user.id)
                             .maybeSingle();
-                        if (profileData) actualRole = UserRole.CUSTOMER;
-                    }
 
-                    // Role mismatch protection
-                    if (actualRole !== UserRole.CUSTOMER) {
-                        await supabase.auth.signOut();
-                        alert("CLEARANCE MISMATCH: This portal is for Customers only. Administrators should use the Secure Portal.");
+                        if (profileData) {
+                            navigate('/dashboard');
+                        } else {
+                            // Check if they are an admin trying to login to customer portal
+                            const { data: adminData } = await supabase
+                                .from('admins')
+                                .select('id')
+                                .eq('id', user.id)
+                                .maybeSingle();
+
+                            if (adminData) {
+                                await supabase.auth.signOut();
+                                alert("CLEARANCE MISMATCH: This portal is for Customers only. Please use the Admin Command portal.");
+                            } else {
+                                await supabase.auth.signOut();
+                                alert("ACCOUNT INITIALIZATION PENDING: Your profile is being prepared. Please try again in a few seconds.");
+                            }
+                        }
                         return;
                     }
 
-                    if (actualRole === UserRole.CUSTOMER) {
-                        navigate('/dashboard');
+                    // Check if profile is now available in localStorage (set by AuthContext)
+                    const saved = localStorage.getItem('rnatech_profile');
+                    if (saved) {
+                        const profile = JSON.parse(saved);
+                        if (profile.role === UserRole.CUSTOMER) {
+                            navigate('/dashboard');
+                        } else {
+                            await supabase.auth.signOut();
+                            alert("CLEARANCE MISMATCH: Identity verified as Administrator. Please use the restricted Admin Portal.");
+                        }
                     } else {
-                        // Edge case: Authenticated but no profile created by trigger yet
-                        await supabase.auth.signOut();
-                        alert("ACCOUNT INITIALIZATION PENDING: Your profile is being prepared. Please try logging in again in a few moments.");
+                        attempts++;
+                        setTimeout(checkProfile, 500);
                     }
-                } catch (profileError: any) {
-                    await supabase.auth.signOut();
-                    throw new Error(`Profile Verification Failed: ${profileError.message}`);
-                }
+                };
+
+                await checkProfile();
             }
         } catch (error: any) {
             alert(error.message);
@@ -93,9 +105,7 @@ const LoginPage = () => {
 
                 {/* Simple Login Header */}
                 <div className="mb-8 text-center">
-                    <div className="w-12 h-12 bg-brand-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-brand-500/20 shadow-lg shadow-brand-500/5">
-                        <ICONS.Logo theme={theme} />
-                    </div>
+
                 </div>
 
                 <form onSubmit={handleLogin} className="space-y-6">
